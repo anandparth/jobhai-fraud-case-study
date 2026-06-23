@@ -145,7 +145,7 @@ strong{font-weight:600;color:var(--ink)}
 .stat .k{font-size:14px;color:var(--muted);line-height:1.4}
 
 /* ============ PULL QUOTE ============ */
-.pq{border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 12px 12px 0;padding:22px 26px;margin:28px 0;max-width:800px}
+.pq{border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 12px 12px 0;padding:22px 26px;margin:28px auto;max-width:800px}
 .pq p{font-family:var(--font-hand);font-size:clamp(20px,2.5vw,26px);color:var(--ink);line-height:1.4;margin:0}
 .pq.green{border-left-color:var(--safe);background:var(--safe-soft)}
 .pq.red{border-left-color:var(--danger);background:var(--danger-soft)}
@@ -266,63 +266,67 @@ strong{font-weight:600;color:var(--ink)}
 /* ============ LO-FI WIREFRAME CONTAINER ============ */
 .lofi-sketch{width:100%;display:block;max-width:380px;margin:0 auto}
 
-/* ============ HI-FI PHONE MOCKUP ============ */
-.phone-wrap{display:flex;justify-content:center}
-.phone{width:280px;min-height:560px;background:#fff;border-radius:32px;border:2.5px solid #1a1a1a;box-shadow:0 16px 48px rgba(0,0,0,.18),inset 0 0 0 1px rgba(0,0,0,.06);overflow:hidden;position:relative;font-size:13px;font-family:var(--font-body);flex-shrink:0}
-.phone-status{height:28px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 18px;font-size:10px;font-weight:600;color:#333}
-.phone-content{flex:1;background:#f7f7f7;overflow:hidden}
-/* phone app nav bar */
-.app-bar{height:52px;background:#fff;border-bottom:1px solid #eee;display:flex;align-items:center;padding:0 14px;gap:10px}
-.app-bar .back-btn{width:28px;height:28px;display:flex;align-items:center;justify-content:center}
-.app-bar .back-btn svg{width:18px;height:18px;stroke:#333;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.app-bar .bar-title{font-size:14px;font-weight:700;color:#111;flex:1}
-.app-bar .share-btn{font-size:11px;color:#0B7076;font-weight:600;display:flex;align-items:center;gap:3px}
-/* job listing card in hifi */
-.job-card{background:#fff;margin:8px;border-radius:10px;border:1px solid #e8e8e8;padding:14px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.job-card .company{font-size:11px;color:#888;margin-bottom:2px}
-.job-card .title{font-size:14px;font-weight:700;color:#111;margin-bottom:6px}
-.job-card .meta-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
-.job-card .meta-item{font-size:11px;color:#666;background:#f5f5f5;padding:3px 8px;border-radius:4px}
-.verify-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;padding:4px 9px;border-radius:6px;margin-bottom:8px}
-.verify-badge.verified{background:#EBFBEE;color:#2F9E44;border:1px solid #2F9E44}
-.verify-badge.unverified{background:#FFF9DB;color:#E67700;border:1px solid #F08C00}
-.verify-badge.newbadge{background:#FFF5F5;color:#C92A2A;border:1px solid #C92A2A}
-.verify-badge svg{width:12px;height:12px;fill:currentColor}
-.call-btn{width:100%;height:38px;background:#0B7076;border-radius:8px;display:flex;align-items:center;justify-content:center;gap:6px;color:#fff;font-size:13px;font-weight:700;margin-top:4px}
-.call-btn svg{width:14px;height:14px;fill:#fff}
-/* bottom sheet */
-.bottom-sheet{position:absolute;bottom:0;left:0;right:0;background:#fff;border-radius:20px 20px 0 0;padding:20px 16px 24px;border-top:2px solid var(--ink);box-shadow:0 -8px 32px rgba(0,0,0,.14)}
-.sheet-pill{width:36px;height:4px;background:#ddd;border-radius:2px;margin:0 auto 16px}
-.sheet-icon{width:44px;height:44px;background:#FFF9DB;border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
-.sheet-icon svg{width:24px;height:24px;fill:var(--warn)}
-.sheet-title{font-size:15px;font-weight:700;color:#111;text-align:center;margin-bottom:6px}
-.sheet-text{font-size:12px;color:#555;text-align:center;line-height:1.5;margin-bottom:16px}
-.sheet-btn-pri{width:100%;height:40px;border-radius:8px;background:#0B7076;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
-.sheet-btn-sec{width:100%;height:40px;border-radius:8px;background:#f5f5f5;color:#666;font-size:13px;display:flex;align-items:center;justify-content:center}
-/* education card */
-.edu-card{background:#E8F8FF;border:1.5px solid #74C0FC;border-radius:10px;margin:8px;padding:12px}
-.edu-card .edu-icon{font-size:20px;margin-bottom:6px}
-.edu-card .edu-title{font-size:13px;font-weight:700;color:#1971C2;margin-bottom:4px}
-.edu-card .edu-text{font-size:11px;color:#555;line-height:1.4}
-/* reporting prompt */
-.report-prompt{margin:8px;background:#fff;border-radius:10px;border:1.5px solid #e8e8e8;padding:16px}
-.report-prompt .rp-q{font-size:14px;font-weight:700;color:#111;margin-bottom:12px;text-align:center}
-.report-btn-fraud{width:100%;height:46px;background:#C92A2A;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;margin-bottom:8px;gap:6px}
-.report-btn-ok{width:100%;height:38px;border-radius:8px;background:#f5f5f5;color:#888;font-size:12px;display:flex;align-items:center;justify-content:center}
-/* admin mismatch */
-.admin-card{background:#fff;margin:8px;border-radius:10px;border:1px solid #e8e8e8}
-.mismatch-banner{background:#FFF3CD;border-bottom:1.5px solid #F08C00;padding:10px 14px;display:flex;align-items:center;gap:8px}
-.mismatch-banner svg{width:16px;height:16px;fill:#E67700;flex-shrink:0}
-.mismatch-banner span{font-size:11px;font-weight:700;color:#E67700}
-.mismatch-body{padding:14px}
-.mm-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:11px}
+/* ============ HI-FI PHONE MOCKUP — Pro ============ */
+.phone-wrap{display:flex;justify-content:center;padding:12px 0}
+.phone{width:300px;min-height:600px;background:#F2F2F7;border-radius:46px;border:10px solid #1C1C1E;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.14),0 40px 80px rgba(0,0,0,.28),0 10px 28px rgba(0,0,0,.16);overflow:hidden;position:relative;font-family:-apple-system,var(--font-body),sans-serif;flex-shrink:0}
+/* Dynamic Island */
+.phone-island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:110px;height:30px;background:#1C1C1E;border-radius:20px;z-index:20;pointer-events:none}
+.phone-status{height:52px;background:#fff;display:flex;align-items:flex-end;justify-content:space-between;padding:0 22px 9px;font-size:11px;font-weight:700;color:#1C1C1E;letter-spacing:-.01em;position:relative;z-index:5}
+/* Nav bar */
+.app-bar{height:44px;background:#fff;border-bottom:.5px solid rgba(60,60,67,.2);display:flex;align-items:center;padding:0 16px;gap:8px;position:relative}
+.app-bar .back-btn{width:44px;height:44px;display:flex;align-items:center;justify-content:center;position:absolute;left:4px;color:#0B7076}
+.app-bar .back-btn svg{width:10px;height:17px;stroke:#0B7076;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.app-bar .bar-title{flex:1;text-align:center;font-size:16px;font-weight:600;color:#1C1C1E;letter-spacing:-.02em}
+.app-bar .share-btn{position:absolute;right:14px;font-size:12px;font-weight:600;color:#0B7076;display:flex;align-items:center;gap:3px}
+/* Job card */
+.job-card{background:#fff;margin:6px 10px;border-radius:16px;padding:16px;box-shadow:0 2px 12px rgba(0,0,0,.06),0 1px 3px rgba(0,0,0,.04)}
+.job-card .company{font-size:10px;color:#8E8E93;margin-bottom:3px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.job-card .title{font-size:15px;font-weight:700;color:#1C1C1E;margin-bottom:10px;letter-spacing:-.02em;line-height:1.2}
+.job-card .meta-row{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px}
+.job-card .meta-item{font-size:11px;color:#3A3A3C;background:#F2F2F7;padding:4px 10px;border-radius:999px;font-weight:500}
+/* Verify badge */
+.verify-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:5px 11px;border-radius:10px;margin-bottom:10px;letter-spacing:.01em}
+.verify-badge.verified{background:#E5F8EC;color:#1A7F3C;border:none}
+.verify-badge.unverified{background:#FFF5E0;color:#B25000;border:none}
+.verify-badge.newbadge{background:#FFF0F0;color:#C92A2A;border:none}
+.verify-badge svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+/* Call button */
+.call-btn{width:100%;height:50px;background:#0B7076;border-radius:14px;display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;font-size:15px;font-weight:700;letter-spacing:-.01em;box-shadow:0 4px 16px rgba(11,112,118,.35);margin-top:2px}
+.call-btn svg{width:16px;height:16px;fill:#fff}
+/* Bottom sheet */
+.bottom-sheet{position:absolute;bottom:0;left:0;right:0;background:#fff;border-radius:24px 24px 0 0;padding:12px 18px 32px;box-shadow:0 -2px 40px rgba(0,0,0,.16)}
+.sheet-pill{width:36px;height:4px;background:#D1D1D6;border-radius:2px;margin:0 auto 18px}
+.sheet-icon{width:52px;height:52px;background:#FFF5E0;border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.sheet-icon svg{width:26px;height:26px}
+.sheet-title{font-size:17px;font-weight:700;color:#1C1C1E;text-align:center;margin-bottom:8px;letter-spacing:-.02em}
+.sheet-text{font-size:12.5px;color:#3A3A3C;text-align:center;line-height:1.55;margin-bottom:18px}
+.sheet-btn-pri{width:100%;height:50px;border-radius:14px;background:#0B7076;color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:10px;letter-spacing:-.01em;box-shadow:0 4px 16px rgba(11,112,118,.3)}
+.sheet-btn-sec{width:100%;height:44px;border-radius:14px;background:#F2F2F7;color:#8E8E93;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center}
+/* Education card */
+.edu-card{background:linear-gradient(135deg,#E8F5FF,#EEF9FF);border:1.5px solid rgba(10,132,255,.18);border-radius:16px;margin:8px 10px;padding:14px;display:flex;gap:12px;align-items:flex-start}
+.edu-card .edu-icon{font-size:22px;flex-shrink:0;margin-top:1px;line-height:1}
+.edu-card .edu-content{flex:1}
+.edu-card .edu-title{font-size:12px;font-weight:700;color:#0A84FF;margin-bottom:5px;letter-spacing:-.01em}
+.edu-card .edu-text{font-size:11px;color:#1C1C1E;line-height:1.48}
+/* Reporting prompt */
+.report-prompt{margin:8px 10px;background:#fff;border-radius:20px;padding:18px 14px 14px;box-shadow:0 2px 12px rgba(0,0,0,.07)}
+.report-prompt .rp-q{font-size:14px;font-weight:700;color:#1C1C1E;margin-bottom:14px;text-align:center;letter-spacing:-.01em;line-height:1.3}
+.report-btn-fraud{width:100%;height:52px;background:#FF3B30;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700;margin-bottom:10px;gap:8px;box-shadow:0 4px 20px rgba(255,59,48,.3);letter-spacing:-.01em}
+.report-btn-ok{width:100%;height:44px;border-radius:14px;background:#F2F2F7;color:#8E8E93;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center}
+/* Admin review */
+.admin-card{background:#fff;margin:8px 10px;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);border:1.5px solid rgba(255,159,10,.45)}
+.mismatch-banner{background:linear-gradient(90deg,#FFF5E0,#FFF8EA);padding:11px 14px;display:flex;align-items:center;gap:8px;border-bottom:1.5px solid rgba(255,159,10,.25)}
+.mismatch-banner svg{width:15px;height:15px;fill:#FF9F0A;flex-shrink:0}
+.mismatch-banner span{font-size:11px;font-weight:700;color:#B25000}
+.mismatch-body{padding:12px 14px}
+.mm-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:.5px solid rgba(60,60,67,.08);font-size:11.5px}
 .mm-row:last-child{border-bottom:none}
-.mm-row .k{color:#888}
-.mm-row .v{font-weight:700;color:#111}
-.mm-row .v.mismatch{color:#C92A2A}
-.admin-actions{display:flex;gap:8px;padding:12px 14px;border-top:1px solid #eee}
-.btn-hold{flex:1;height:36px;background:#FFF9DB;border-radius:7px;font-size:12px;font-weight:700;color:#E67700;display:flex;align-items:center;justify-content:center;border:1.5px solid #F08C00}
-.btn-approve{flex:1;height:36px;background:#EBFBEE;border-radius:7px;font-size:12px;font-weight:700;color:#2F9E44;display:flex;align-items:center;justify-content:center;border:1.5px solid #2F9E44}
+.mm-row .k{color:#8E8E93;font-weight:400}
+.mm-row .v{font-weight:600;color:#1C1C1E}
+.mm-row .v.mismatch{color:#FF3B30}
+.admin-actions{display:flex;gap:8px;padding:12px;border-top:.5px solid rgba(60,60,67,.1)}
+.btn-hold{flex:1;height:38px;background:#FFF5E0;border-radius:10px;font-size:12px;font-weight:700;color:#B25000;display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(255,159,10,.4)}
+.btn-approve{flex:1;height:38px;background:#E5F8EC;border-radius:10px;font-size:12px;font-weight:700;color:#1A7F3C;display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(52,199,89,.4)}
 
 /* ============ DUO (2-col prose) ============ */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:900px;margin-inline:auto}
@@ -527,13 +531,12 @@ footer .sig{font-family:var(--font-hand);font-size:30px;color:var(--ink);font-we
           <g fill="none" stroke="#D8D3C3" stroke-width="1.4">
             <line x1="80" y1="340" x2="1000" y2="340"/>
           </g>
-          <text x="200" y="375" font-family="Spline Sans Mono,monospace" font-size="12" letter-spacing="1.5" fill="#74705F" text-anchor="middle">121 FRAUDULENT RECRUITERS</text>
-          <text x="540" y="375" font-family="Spline Sans Mono,monospace" font-size="12" letter-spacing="1.5" fill="#74705F" text-anchor="middle">653 FAKE JOB POSTS</text>
-          <text x="860" y="375" font-family="Spline Sans Mono,monospace" font-size="12" letter-spacing="1.5" fill="#74705F" text-anchor="middle">DELHI NCR · #1 FRAUD CATEGORY</text>
-          <!-- circles at data labels -->
-          <circle cx="88" cy="375" r="5" fill="#e8590c" stroke="none"/>
-          <circle cx="460" cy="375" r="5" fill="#e8590c" stroke="none"/>
-          <circle cx="774" cy="375" r="5" fill="#e8590c" stroke="none"/>
+          <circle cx="103" cy="375" r="5" fill="#e8590c" stroke="none"/>
+          <text x="117" y="375" font-family="Spline Sans Mono,monospace" font-size="12" letter-spacing="1.5" fill="#74705F" text-anchor="start">121 FRAUDULENT RECRUITERS</text>
+          <circle cx="453" cy="375" r="5" fill="#e8590c" stroke="none"/>
+          <text x="467" y="375" font-family="Spline Sans Mono,monospace" font-size="12" letter-spacing="1.5" fill="#74705F" text-anchor="start">653 FAKE JOB POSTS</text>
+          <circle cx="763" cy="375" r="5" fill="#e8590c" stroke="none"/>
+          <text x="777" y="375" font-family="Spline Sans Mono,monospace" font-size="12" letter-spacing="1.5" fill="#74705F" text-anchor="start">DELHI NCR · #1 FRAUD CATEGORY</text>
         </svg>
       </div>
       <div class="fig__cap">
@@ -1113,40 +1116,41 @@ footer .sig{font-family:var(--font-hand);font-size:30px;color:var(--ink);font-we
           <div class="design-label hifi">Hi-fi Screen</div>
           <div class="phone-wrap">
             <div class="phone">
-              <div class="phone-status"><span>9:41</span><span>▐▌ WiFi ●</span></div>
+              <div class="phone-island"></div>
+              <div class="phone-status"><span>9:41</span><span style="display:flex;align-items:center;gap:4px"><svg width="15" height="10" viewBox="0 0 15 10" fill="#1C1C1E"><rect x="0" y="3" width="3" height="7" rx=".5"/><rect x="4" y="2" width="3" height="8" rx=".5"/><rect x="8" y="1" width="3" height="9" rx=".5"/><rect x="12" y="0" width="2" height="10" rx=".5"/></svg><svg width="15" height="11" viewBox="0 0 15 11" fill="#1C1C1E"><path d="M7.5 2.5 C5 2.5 2.8 3.8 1.5 5.8 L0 4.3 C1.7 2 4.4.5 7.5.5s5.8 1.5 7.5 3.8L13.5 5.8C12.2 3.8 10 2.5 7.5 2.5z"/><path d="M7.5 5.5c-1.5 0-2.8.7-3.7 1.8L2.3 5.8C3.6 4.3 5.4 3.5 7.5 3.5s3.9.8 5.2 2.3l-1.5 1.5C10.3 6.2 9 5.5 7.5 5.5z"/><circle cx="7.5" cy="9" r="1.5"/></svg></span></div>
               <div class="app-bar">
                 <div class="back-btn"><svg viewBox="0 0 20 20"><path d="M13 4 L7 10 L13 16"/></svg></div>
                 <div class="bar-title">Security Guard Jobs</div>
-                <div class="share-btn">
-                  <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10 L16 10 M10 4 L16 10 L10 16"/></svg>
-                  Share
-                </div>
+                <div class="share-btn">Filter</div>
               </div>
-              <div style="background:#f7f7f7;padding:6px;overflow:hidden">
+              <div style="background:#F2F2F7;padding:6px 0;overflow:hidden">
                 <div class="job-card">
                   <div class="verify-badge verified">
-                    <svg viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3"/></svg>
+                    <svg viewBox="0 0 13 13"><circle cx="6.5" cy="6.5" r="6" fill="#1A7F3C"/><path d="M4 6.5 L5.8 8.5 L9.5 4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     Verified Recruiter
                   </div>
-                  <div class="company">RD Security Services Pvt Ltd</div>
+                  <div class="company">RD Security Services</div>
                   <div class="title">Security Guard</div>
                   <div class="meta-row">
-                    <span class="meta-item">📍 Delhi</span>
+                    <span class="meta-item">Delhi</span>
                     <span class="meta-item">₹14,000/mo</span>
                     <span class="meta-item">10th pass</span>
                   </div>
                   <div class="call-btn"><svg viewBox="0 0 16 16"><path d="M3 3 Q3 1 5 1 L7 3 Q8 5 6 6 Q8 8 10 10 Q11 8 13 9 L15 11 Q15 13 13 13 Q5 13 3 5 Q3 4 3 3Z"/></svg>Call HR</div>
                 </div>
-                <div class="job-card" style="margin-top:0">
-                  <div class="verify-badge unverified">⚠ New · Unverified</div>
+                <div class="job-card">
+                  <div class="verify-badge unverified">
+                    <svg viewBox="0 0 13 13"><path d="M6.5 1 L12.5 12 H.5 Z" fill="#FF9F0A"/><rect x="6" y="5" width="1" height="4" fill="#fff"/><circle cx="6.5" cy="10.5" r=".8" fill="#fff"/></svg>
+                    New · Unverified
+                  </div>
                   <div class="company">SLV Guard Solutions</div>
                   <div class="title">Security Guard</div>
                   <div class="meta-row">
-                    <span class="meta-item">📍 Delhi</span>
+                    <span class="meta-item">Delhi</span>
                     <span class="meta-item">₹13,500/mo</span>
                     <span class="meta-item">8th pass ok</span>
                   </div>
-                  <div class="call-btn" style="background:#888">📞 Call HR</div>
+                  <div class="call-btn" style="background:#8E8E93;box-shadow:none">Call HR</div>
                 </div>
               </div>
             </div>
@@ -1210,29 +1214,33 @@ footer .sig{font-family:var(--font-hand);font-size:30px;color:var(--ink);font-we
           <div class="design-label hifi">Hi-fi Screen</div>
           <div class="phone-wrap">
             <div class="phone" style="position:relative">
-              <div class="phone-status"><span>9:41</span><span>▐▌ WiFi ●</span></div>
+              <div class="phone-island"></div>
+              <div class="phone-status"><span>9:41</span><span style="display:flex;align-items:center;gap:4px"><svg width="15" height="10" viewBox="0 0 15 10" fill="#1C1C1E"><rect x="0" y="3" width="3" height="7" rx=".5"/><rect x="4" y="2" width="3" height="8" rx=".5"/><rect x="8" y="1" width="3" height="9" rx=".5"/><rect x="12" y="0" width="2" height="10" rx=".5"/></svg></span></div>
               <div class="app-bar">
                 <div class="back-btn"><svg viewBox="0 0 20 20"><path d="M13 4 L7 10 L13 16"/></svg></div>
                 <div class="bar-title">SLV Guard Solutions</div>
               </div>
-              <!-- dimmed content behind -->
-              <div style="padding:8px;filter:brightness(.6) blur(1px);pointer-events:none">
+              <!-- dimmed content behind sheet -->
+              <div style="padding:6px 0;filter:brightness(.55) blur(2px);pointer-events:none">
                 <div class="job-card">
-                  <div class="verify-badge unverified">⚠ New · Unverified</div>
+                  <div class="verify-badge unverified">
+                    <svg viewBox="0 0 13 13"><path d="M6.5 1 L12.5 12 H.5 Z" fill="#FF9F0A"/><rect x="6" y="5" width="1" height="4" fill="#fff"/><circle cx="6.5" cy="10.5" r=".8" fill="#fff"/></svg>
+                    New · Unverified
+                  </div>
                   <div class="company">SLV Guard Solutions</div>
                   <div class="title">Security Guard · Delhi</div>
                   <div class="meta-row"><span class="meta-item">₹13,500/mo</span></div>
-                  <div class="call-btn" style="background:#888">📞 Call HR</div>
+                  <div class="call-btn" style="background:#8E8E93;box-shadow:none">Call HR</div>
                 </div>
               </div>
               <!-- bottom sheet -->
               <div class="bottom-sheet">
                 <div class="sheet-pill"></div>
                 <div class="sheet-icon">
-                  <svg viewBox="0 0 24 24"><path d="M12 2 L1 21 L23 21 Z"/><text x="12" y="18" font-size="10" text-anchor="middle" fill="#E67700" font-weight="900">!</text></svg>
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 L2 20 H22 Z" fill="#FF9F0A" stroke="none"/><rect x="11.2" y="9" width="1.6" height="6" rx=".6" fill="#fff"/><circle cx="12" cy="17.5" r="1.1" fill="#fff"/></svg>
                 </div>
                 <div class="sheet-title">याद रखो</div>
-                <div class="sheet-text">कोई भी असली कंपनी जॉब के लिए पैसे नहीं मांगती।<br><br>यूनिफार्म, डिपॉज़िट, या ट्रेनिंग के लिए<br>पैसे देने से मना करो।</div>
+                <div class="sheet-text">कोई भी असली कंपनी जॉब के लिए पैसे नहीं मांगती।<br><br>यूनिफार्म, डिपॉज़िट, या ट्रेनिंग के लिए पैसे देने से मना करो।</div>
                 <div class="sheet-btn-pri">← वापस जाएं — Go Back</div>
                 <div class="sheet-btn-sec">हाँ, फिर भी Call करें</div>
               </div>
@@ -1298,22 +1306,28 @@ footer .sig{font-family:var(--font-hand);font-size:30px;color:var(--ink);font-we
           <div class="design-label hifi">Hi-fi Screen</div>
           <div class="phone-wrap">
             <div class="phone">
-              <div class="phone-status"><span>9:41</span><span>▐▌ WiFi ●</span></div>
+              <div class="phone-island"></div>
+              <div class="phone-status"><span>9:41</span><span style="display:flex;align-items:center;gap:4px"><svg width="15" height="10" viewBox="0 0 15 10" fill="#1C1C1E"><rect x="0" y="3" width="3" height="7" rx=".5"/><rect x="4" y="2" width="3" height="8" rx=".5"/><rect x="8" y="1" width="3" height="9" rx=".5"/><rect x="12" y="0" width="2" height="10" rx=".5"/></svg></span></div>
               <div class="app-bar">
                 <div class="back-btn"><svg viewBox="0 0 20 20"><path d="M13 4 L7 10 L13 16"/></svg></div>
                 <div class="bar-title">Security Guard Jobs</div>
               </div>
-              <div style="background:#f7f7f7;padding:6px;overflow:hidden">
+              <div style="background:#F2F2F7;padding:6px 0;overflow:hidden">
                 <div class="edu-card">
                   <div class="edu-icon">🛡️</div>
-                  <div class="edu-title">असली कंपनी कभी पैसे नहीं मांगती</div>
-                  <div class="edu-text">Real companies provide uniforms free of cost. If asked to pay for uniform, deposit, or ID card — <strong>it is a scam.</strong> Tap to learn how to protect yourself.</div>
+                  <div class="edu-content">
+                    <div class="edu-title">असली कंपनी कभी पैसे नहीं मांगती</div>
+                    <div class="edu-text">Real companies provide uniforms free. If asked to pay for uniform, deposit, or ID card — <strong>it is a scam.</strong></div>
+                  </div>
                 </div>
                 <div class="job-card">
-                  <div class="verify-badge verified"><svg viewBox="0 0 12 12"><path d="M2 6 L5 9 L10 3"/></svg> Verified Recruiter</div>
+                  <div class="verify-badge verified">
+                    <svg viewBox="0 0 13 13"><circle cx="6.5" cy="6.5" r="6" fill="#1A7F3C"/><path d="M4 6.5 L5.8 8.5 L9.5 4.5" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Verified Recruiter
+                  </div>
                   <div class="company">Bharat Security Services</div>
                   <div class="title">Security Guard</div>
-                  <div class="meta-row"><span class="meta-item">📍 Delhi</span><span class="meta-item">₹15,000/mo</span></div>
+                  <div class="meta-row"><span class="meta-item">Delhi</span><span class="meta-item">₹15,000/mo</span></div>
                   <div class="call-btn"><svg viewBox="0 0 16 16"><path d="M3 3 Q3 1 5 1 L7 3 Q8 5 6 6 Q8 8 10 10 Q11 8 13 9 L15 11 Q15 13 13 13 Q5 13 3 5 Q3 4 3 3Z"/></svg>Call HR</div>
                 </div>
               </div>
@@ -1379,24 +1393,26 @@ footer .sig{font-family:var(--font-hand);font-size:30px;color:var(--ink);font-we
           <div class="design-label hifi">Hi-fi Screen</div>
           <div class="phone-wrap">
             <div class="phone">
-              <div class="phone-status"><span>9:41</span><span>▐▌ WiFi ●</span></div>
+              <div class="phone-island"></div>
+              <div class="phone-status"><span>9:41</span><span style="display:flex;align-items:center;gap:4px"><svg width="15" height="10" viewBox="0 0 15 10" fill="#1C1C1E"><rect x="0" y="3" width="3" height="7" rx=".5"/><rect x="4" y="2" width="3" height="8" rx=".5"/><rect x="8" y="1" width="3" height="9" rx=".5"/><rect x="12" y="0" width="2" height="10" rx=".5"/></svg></span></div>
               <div class="app-bar">
-                <div class="bar-title" style="text-align:center;flex:1">SLV Guard Solutions</div>
+                <div class="bar-title">SLV Guard Solutions</div>
               </div>
-              <div style="padding:12px;background:#f7f7f7">
-                <div style="text-align:center;padding:8px 0 14px">
-                  <div style="font-size:12px;color:#888;margin-bottom:3px">Call ended · 2 min 14 sec</div>
-                  <div style="font-size:15px;font-weight:700;color:#111">कैसी रही call?</div>
-                  <div style="font-size:11px;color:#888">How was the call with this HR?</div>
+              <div style="padding:0;background:#F2F2F7">
+                <div style="text-align:center;padding:20px 16px 12px">
+                  <div style="width:52px;height:52px;background:#fff;border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 2px 8px rgba(0,0,0,.08);font-size:22px">📞</div>
+                  <div style="font-size:11px;color:#8E8E93;font-weight:500;margin-bottom:4px;letter-spacing:.02em;text-transform:uppercase">Call ended · 2 min 14 sec</div>
+                  <div style="font-size:17px;font-weight:700;color:#1C1C1E;letter-spacing:-.02em">कैसी रही call?</div>
+                  <div style="font-size:12px;color:#8E8E93;margin-top:3px">How was the call with this HR?</div>
                 </div>
                 <div class="report-prompt">
                   <div class="rp-q">क्या HR ने पैसे माँगे?</div>
                   <div class="report-btn-fraud">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M8 1 L1 14 L15 14 Z"/><text x="8" y="12" font-size="7" text-anchor="middle" fill="white" font-weight="900">!</text></svg>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.5 L14.5 13.5 H1.5 Z" fill="white" opacity=".9"/><rect x="7.3" y="5.5" width="1.4" height="5" rx=".5" fill="#FF3B30"/><circle cx="8" cy="12" r=".9" fill="#FF3B30"/></svg>
                     Unhone paise maange — Report
                   </div>
                   <div class="report-btn-ok">Nahi, sab theek tha · All good</div>
-                  <div style="text-align:center;margin-top:8px;font-size:11px;color:#bbb">Skip for now</div>
+                  <div style="text-align:center;margin-top:10px;font-size:11px;color:#C7C7CC;font-weight:500">Skip for now</div>
                 </div>
               </div>
             </div>
@@ -1463,13 +1479,14 @@ footer .sig{font-family:var(--font-hand);font-size:30px;color:var(--ink);font-we
           <div class="design-label hifi">Hi-fi Screen</div>
           <div class="phone-wrap">
             <div class="phone">
-              <div class="phone-status"><span>9:41</span><span>▐▌ WiFi ●</span></div>
+              <div class="phone-island"></div>
+              <div class="phone-status"><span>9:41</span><span style="display:flex;align-items:center;gap:4px"><svg width="15" height="10" viewBox="0 0 15 10" fill="#1C1C1E"><rect x="0" y="3" width="3" height="7" rx=".5"/><rect x="4" y="2" width="3" height="8" rx=".5"/><rect x="8" y="1" width="3" height="9" rx=".5"/><rect x="12" y="0" width="2" height="10" rx=".5"/></svg></span></div>
               <div class="app-bar">
                 <div class="back-btn"><svg viewBox="0 0 20 20"><path d="M13 4 L7 10 L13 16"/></svg></div>
                 <div class="bar-title">Listings for Review</div>
-                <div style="background:#C92A2A;color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:12px">3</div>
+                <div style="background:#FF3B30;color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:10px;position:absolute;right:14px">3</div>
               </div>
-              <div style="background:#f7f7f7;padding:6px">
+              <div style="background:#F2F2F7;padding:6px 0">
                 <div class="admin-card">
                   <div class="mismatch-banner">
                     <svg viewBox="0 0 16 16"><path d="M8 1 L1 14 L15 14 Z"/></svg>
@@ -1517,7 +1534,7 @@ footer .sig{font-family:var(--font-hand);font-size:30px;color:var(--ink);font-we
     </div>
     <div style="margin-top:48px;padding:28px 0;border-top:2px solid var(--line)">
       <span class="eyebrow" style="transform:rotate(-1deg)">Parth Anand</span>
-      <p class="small" style="margin-top:6px">UX Researcher · Job Hai · 2026</p>
+      <p class="small" style="margin-top:6px">UX Research | Product Focus · Job Hai · 2026</p>
     </div>
   </div>
 </section>
