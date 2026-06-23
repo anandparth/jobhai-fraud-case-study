@@ -188,13 +188,13 @@ strong{font-weight:600;color:var(--ink)}
 
 /* ============ JOURNEY TIMELINE ============ */
 .journey{position:relative;max-width:760px;margin:32px auto}
-.journey::before{content:"";position:absolute;left:29px;top:42px;bottom:42px;width:2px;background:var(--line);border-radius:2px}
-.journey-step{display:flex;gap:24px;margin-bottom:36px;position:relative;align-items:flex-start}
+.journey::before{content:"";position:absolute;left:29px;top:30px;bottom:30px;width:2px;background:var(--line);border-radius:2px}
+.journey-step{position:relative;padding-left:84px;margin-bottom:36px;min-height:68px}
 .journey-step:last-child{margin-bottom:0}
-.step-circle{width:60px;height:60px;border-radius:50%;background:#fff;border:2.4px solid var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-disp);font-size:22px;font-weight:800;line-height:1;color:var(--ink);box-shadow:3px 3px 0 rgba(34,32,25,.9);position:relative;z-index:2}
+.step-circle{position:absolute;left:0;top:0;width:60px;height:60px;border-radius:50%;background:#fff;border:2.4px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--font-disp);font-size:22px;font-weight:800;line-height:1;color:var(--ink);box-shadow:3px 3px 0 rgba(34,32,25,.9);z-index:2}
 .step-circle.warn{border-color:var(--warn);color:var(--warn)}
 .step-circle.danger{border-color:var(--danger);color:var(--danger)}
-.step-body{background:#fff;border:2px solid var(--ink);border-radius:12px;padding:20px 22px;box-shadow:4px 4px 0 rgba(34,32,25,.9);flex:1;min-width:0}
+.step-body{background:#fff;border:2px solid var(--ink);border-radius:12px;padding:20px 22px;box-shadow:4px 4px 0 rgba(34,32,25,.9)}
 .step-badge{display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:8px;font-weight:600}
 .step-badge.warn{background:var(--warn-soft);color:var(--warn);border:1.4px solid var(--warn)}
 .step-badge.danger{background:var(--danger-soft);color:var(--danger);border:1.4px solid var(--danger)}
