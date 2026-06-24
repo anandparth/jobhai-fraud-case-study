@@ -1742,18 +1742,6 @@ document.querySelectorAll(".sketch .draw").forEach(path => {
   } catch(e) {}
 });
 
-/* ── Journey steps stagger ── */
-ScrollTrigger.batch(".journey-step", {
-  onEnter: batch => gsap.from(batch, {
-    opacity: 0,
-    x: -24,
-    duration: 0.65,
-    stagger: 0.12,
-    ease: "power2.out"
-  }),
-  start: "top 85%",
-  once: true
-});
 
 /* ── Active nav on scroll ── */
 const sections = document.querySelectorAll("section[id]");
