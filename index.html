@@ -347,6 +347,11 @@ ul.clean li b{color:var(--ink);font-weight:600}
 .toc-item .ti{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:var(--accent);font-weight:600;flex-shrink:0}
 .toc-item .tt{font-size:14.5px;font-weight:600;color:var(--ink)}
 
+/* ============ PDF DOWNLOAD BUTTON ============ */
+.pdf-dl-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--ink);color:var(--paper);font-family:var(--font-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;border-radius:6px;text-decoration:none;transition:background .18s,transform .15s;white-space:nowrap;flex-shrink:0}
+.pdf-dl-btn:hover{background:var(--accent);transform:translateY(-1px)}
+.pdf-dl-btn svg{flex-shrink:0}
+
 /* ============ FOOTER ============ */
 footer{border-top:2px solid var(--ink);background:var(--paper-2)}
 footer .wrap{padding-block:48px}
@@ -1653,9 +1658,15 @@ footer .sig{font-family:var(--font-hand);font-size:30px;color:var(--ink);font-we
       <p>These users came to our app because they trusted us to show them real opportunities. When a fraudster scams them through our platform, that trust is broken — not in the fraudster, but in <span class="hl">Job Hai</span>. We are the interface they interacted with. We are the platform they relied on. We are the product they will tell their friends about — one way or another.</p>
       <p>This research is not just about reducing fraud statistics. It's about making Job Hai the platform where a Security Guard job seeker from Uttam Nagar, Delhi, can search for work without fear. That's entirely within our power to do. This report shows us where to start.</p>
     </div>
-    <div style="margin-top:48px;padding:28px 0;border-top:2px solid var(--line)">
-      <span class="eyebrow" style="transform:rotate(-1deg)">Parth Anand</span>
-      <p class="small" style="margin-top:6px">UX Research | Product Focus · Job Hai · 2026</p>
+    <div style="margin-top:48px;padding:28px 0;border-top:2px solid var(--line);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+      <div>
+        <span class="eyebrow" style="transform:rotate(-1deg)">Parth Anand</span>
+        <p class="small" style="margin-top:6px">UX Research | Product Focus · Job Hai · 2026</p>
+      </div>
+      <a href="JobHai-UX-Study.pdf" download class="pdf-dl-btn">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1v9M8 10l-3-3M8 10l3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        Download Research PDF
+      </a>
     </div>
   </div>
 </section>
