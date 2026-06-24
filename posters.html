@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Posters · JobHai Fraud Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Spline+Sans+Mono:wght@400;500;600&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
+<style>
+  :root {
+    --ink: #221909;
+    --paper: #F5F0E8;
+    --paper-2: #EDE9DC;
+    --muted: #7a7060;
+    --accent: #1a8a7a;
+    --danger: #c92a2a;
+    --orange: #c9610a;
+    --safe: #1a8a7a;
+    --hl: #ffe89b;
+    --font-disp: "Bricolage Grotesque", system-ui, sans-serif;
+    --font-body: "Spline Sans", system-ui, sans-serif;
+    --font-mono: "Spline Sans Mono", monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #1a1612;
+    font-family: var(--font-body);
+    padding: 48px 24px 80px;
+    min-height: 100vh;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .page-header h1 {
+    font-family: var(--font-disp);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--paper);
+    letter-spacing: -.02em;
+  }
+
+  .page-header p {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: rgba(245,240,232,.4);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .poster-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 540px;
+  }
+
+  /* Displayed at 540px, exports at 1080×1080 (scale 2) */
+  .poster {
+    width: 540px;
+    height: 540px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    border-radius: 4px;
+  }
+
+  /* ─── POSTER 1 — THE SCALE ─── */
+  .p1 {
+    background: var(--ink);
+  }
+
+  .p1 .noise {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: .5;
+    pointer-events: none;
+  }
+
+  .p1 .top-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), #4ecdc4);
+  }
+
+  .p1 .tag {
+    position: absolute;
+    top: 22px; left: 28px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,.35);
+    font-weight: 500;
+  }
+
+  .p1 .tag-right {
+    position: absolute;
+    top: 22px; right: 28px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .12em;
+    color: rgba(245,240,232,.25);
+    text-transform: uppercase;
+  }
+
+  .p1 .main-num {
+    position: absolute;
+    top: 56px; left: 28px; right: 28px;
+    font-family: var(--font-disp);
+    font-weight: 800;
+    font-size: 164px;
+    line-height: .88;
+    letter-spacing: -.06em;
+    color: var(--paper);
+    opacity: .06;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .p1 .content {
+    position: absolute;
+    top: 56px; left: 28px; right: 28px;
+  }
+
+  .p1 .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .p1 .headline {
+    font-family: var(--font-disp);
+    font-weight: 800;
+    font-size: 52px;
+    line-height: .92;
+    letter-spacing: -.03em;
+    color: var(--paper);
+    margin-bottom: 6px;
+  }
+
+  .p1 .headline em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .p1 .sub {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: rgba(245,240,232,.5);
+    line-height: 1.45;
+    margin-top: 14px;
+    max-width: 340px;
+  }
+
+  .p1 .divider {
+    position: absolute;
+    left: 28px; right: 28px;
+    top: 230px;
+    height: 1px;
+    background: rgba(245,240,232,.1);
+  }
+
+  .p1 .stats-row {
+    position: absolute;
+    left: 28px; right: 28px;
+    top: 252px;
+    display: flex;
+    gap: 0;
+  }
+
+  .p1 .stat-item {
+    flex: 1;
+    padding-right: 20px;
+    border-right: 1px solid rgba(245,240,232,.1);
+    margin-right: 20px;
+  }
+
+  .p1 .stat-item:last-child {
+    border-right: none;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .p1 .stat-num {
+    font-family: var(--font-disp);
+    font-weight: 800;
+    font-size: 38px;
+    line-height: 1;
+    letter-spacing: -.03em;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .p1 .stat-num.orange { color: #e8822a; }
+  .p1 .stat-num.red    { color: #e05252; }
+  .p1 .stat-num.teal   { color: var(--accent); }
+  .p1 .stat-num.paper  { color: var(--paper); }
+
+  .p1 .stat-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: rgba(245,240,232,.35);
+    letter-spacing: .06em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .p1 .dot-grid {
+    position: absolute;
+    left: 28px; right: 28px;
+    top: 388px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .p1 .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(245,240,232,.15);
+    flex-shrink: 0;
+  }
+
+  .p1 .dot.active {
+    background: var(--accent);
+    opacity: .7;
+  }
+
+  .p1 .dot.fraud {
+    background: #e05252;
+    opacity: .8;
+  }
+
+  .p1 .dot-legend {
+    position: absolute;
+    left: 28px;
+    bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .p1 .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: rgba(245,240,232,.3);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  .p1 .legend-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .p1 .byline {
+    position: absolute;
+    right: 28px;
+    bottom: 28px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: rgba(245,240,232,.2);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    text-align: right;
+  }
+
+  /* ─── POSTER 2 — THE PATTERN ─── */
+  .p2 {
+    background: var(--paper);
+  }
+
+  .p2 .border-top {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: var(--ink);
+  }
+
+  .p2 .border-bottom {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 5px;
+    background: var(--ink);
+  }
+
+  .p2 .tag {
+    position: absolute;
+    top: 24px; left: 30px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  .p2 .num-bg {
+    position: absolute;
+    top: 8px; right: -10px;
+    font-family: var(--font-disp);
+    font-weight: 800;
+    font-size: 220px;
+    line-height: 1;
+    letter-spacing: -.06em;
+    color: var(--ink);
+    opacity: .04;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .p2 .content {
+    position: absolute;
+    top: 52px; left: 30px; right: 30px;
+    bottom: 24px;
+  }
+
+  .p2 .headline {
+    font-family: var(--font-disp);
+    font-weight: 800;
+    font-size: 38px;
+    line-height: .95;
+    letter-spacing: -.03em;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .p2 .sub {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 26px;
+  }
+
+  .p2 .step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .p2 .step-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--font-disp);
+    font-weight: 800;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .p2 .step-connector {
+    position: absolute;
+    left: 17px;
+    top: 36px;
+    width: 2px;
+    height: 22px;
+    background: rgba(34,25,9,.15);
+  }
+
+  .p2 .step-body {
+    padding-top: 4px;
+  }
+
+  .p2 .step-title {
+    font-family: var(--font-disp);
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--ink);
+    margin-bottom: 3px;
+    letter-spacing: -.01em;
+  }
+
+  .p2 .step-desc {
+    font-family: var(--font-body);
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.45;
+    max-width: 380px;
+  }
+
+  .p2 .callout {
+    position: absolute;
+    bottom: 16px;
+    left: 0; right: 0;
+    background: var(--ink);
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .p2 .callout-num {
+    font-family: var(--font-disp);
+    font-weight: 800;
+    font-size: 36px;
+    color: #e8822a;
+    letter-spacing: -.03em;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .p2 .callout-text {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: rgba(245,240,232,.75);
+    line-height: 1.4;
+  }
+
+  .p2 .byline {
+    position: absolute;
+    right: 30px;
+    bottom: 12px;
+    font-family: var(--font-mono);
+    font-size: 8px;
+    color: rgba(245,240,232,.3);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  /* ─── POSTER 3 — THE FIX ─── */
+  .p3 {
+    background: #0e2420;
+  }
+
+  .p3 .grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+    background-size: 54px 54px;
+  }
+
+  .p3 .accent-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #1a8a7a, #4ecdc4, #1a8a7a);
+  }
+
+  .p3 .tag {
+    position: absolute;
+    top: 22px; left: 28px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: rgba(78,205,196,.5);
+    font-weight: 600;
+  }
+
+  .p3 .tag-right {
+    position: absolute;
+    top: 22px; right: 28px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: .1em;
+    color: rgba(78,205,196,.25);
+    text-transform: uppercase;
+  }
+
+  .p3 .content {
+    position: absolute;
+    top: 52px; left: 28px; right: 28px;
+  }
+
+  .p3 .headline {
+    font-family: var(--font-disp);
+    font-weight: 800;
+    font-size: 44px;
+    line-height: .92;
+    letter-spacing: -.03em;
+    color: var(--paper);
+    margin-bottom: 4px;
+  }
+
+  .p3 .headline em {
+    font-style: normal;
+    color: #4ecdc4;
+  }
+
+  .p3 .sub {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: rgba(245,240,232,.35);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .p3 .intervention {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(78,205,196,.12);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+
+  .p3 .int-num {
+    font-family: var(--font-disp);
+    font-weight: 800;
+    font-size: 22px;
+    color: rgba(78,205,196,.4);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 24px;
+  }
+
+  .p3 .int-body {
+    flex: 1;
+  }
+
+  .p3 .int-title {
+    font-family: var(--font-disp);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--paper);
+    margin-bottom: 2px;
+    letter-spacing: -.01em;
+  }
+
+  .p3 .int-desc {
+    font-family: var(--font-body);
+    font-size: 11.5px;
+    color: rgba(245,240,232,.4);
+    line-height: 1.4;
+  }
+
+  .p3 .int-badge {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: #4ecdc4;
+    letter-spacing: .08em;
+    background: rgba(78,205,196,.12);
+    border: 1px solid rgba(78,205,196,.2);
+    border-radius: 4px;
+    padding: 2px 7px;
+    white-space: nowrap;
+    align-self: center;
+    flex-shrink: 0;
+  }
+
+  .p3 .metrics-row {
+    position: absolute;
+    bottom: 28px;
+    left: 28px; right: 28px;
+    display: flex;
+    gap: 0;
+    border-top: 1px solid rgba(78,205,196,.15);
+    padding-top: 16px;
+  }
+
+  .p3 .m-item {
+    flex: 1;
+    text-align: center;
+    padding: 0 10px;
+    border-right: 1px solid rgba(78,205,196,.1);
+  }
+
+  .p3 .m-item:last-child {
+    border-right: none;
+  }
+
+  .p3 .m-num {
+    font-family: var(--font-disp);
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: -.03em;
+    color: #4ecdc4;
+    display: block;
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+
+  .p3 .m-label {
+    font-family: var(--font-mono);
+    font-size: 8.5px;
+    color: rgba(245,240,232,.3);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    line-height: 1.35;
+    display: block;
+  }
+
+  /* ─── DOWNLOAD BUTTON ─── */
+  .dl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 22px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background .15s, transform .15s;
+  }
+
+  .dl-btn:hover {
+    background: #fff;
+    transform: translateY(-1px);
+  }
+
+  .dl-btn svg {
+    flex-shrink: 0;
+  }
+
+  .poster-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,.25);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Research Gallery Posters</h1>
+  <p>JobHai Fraud Study · Delhi NCR · 2026 · Click to download 1080×1080px</p>
+</div>
+
+<div class="gallery">
+
+  <!-- ══════════ POSTER 1 — THE SCALE ══════════ -->
+  <div class="poster-wrap">
+    <div class="poster p1" id="poster1">
+      <div class="noise"></div>
+      <div class="top-bar"></div>
+      <div class="tag">UX Research · Job Hai · 2026</div>
+      <div class="tag-right">01 / 03</div>
+
+      <!-- Ghost number -->
+      <div class="main-num">249</div>
+
+      <!-- Main content -->
+      <div class="content">
+        <span class="eyebrow">The Scale of the Problem</span>
+        <div class="headline">
+          <em>249</em> Blacklisted<br>Recruiters
+        </div>
+        <div class="sub">Delhi NCR · Security Guard Category · A UX research study on fraudulent recruitment patterns on the Job Hai platform</div>
+      </div>
+
+      <!-- Divider -->
+      <div class="divider"></div>
+
+      <!-- 3 stats -->
+      <div class="stats-row">
+        <div class="stat-item">
+          <span class="stat-num orange">121</span>
+          <span class="stat-label">Recruiters<br>Posting Fake<br>Guard Jobs</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num red">653</span>
+          <span class="stat-label">Fake Job<br>Postings<br>Active</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num teal">#1</span>
+          <span class="stat-label">Most Fraud-<br>Prone Category<br>in NCR</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num paper">₹66L</span>
+          <span class="stat-label">Annual User<br>Losses<br>Preventable</span>
+        </div>
+      </div>
+
+      <!-- Dot grid: 249 dots, 121 highlighted as fraud -->
+      <div class="dot-grid" id="dotGrid"></div>
+
+      <!-- Legend -->
+      <div class="dot-legend">
+        <div class="legend-item">
+          <div class="legend-dot" style="background:#e05252;opacity:.8"></div>
+          Fraud recruiters (121)
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background:rgba(245,240,232,.15)"></div>
+          Other blacklisted (128)
+        </div>
+      </div>
+
+      <div class="byline">Parth Anand · Job Hai</div>
+    </div>
+
+    <div class="poster-label">Poster 01 — The Scale</div>
+    <button class="dl-btn" onclick="downloadPoster('poster1', 'JobHai-Research-Poster-01-Scale.png')">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v8M8 10l-3-3M8 10l3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      Download 1080×1080
+    </button>
+  </div>
+
+  <!-- ══════════ POSTER 2 — THE PATTERN ══════════ -->
+  <div class="poster-wrap">
+    <div class="poster p2" id="poster2">
+      <div class="border-top"></div>
+      <div class="border-bottom"></div>
+      <div class="num-bg">3</div>
+
+      <div class="tag">02 / 03 · Fraud Anatomy</div>
+
+      <div class="content">
+        <div class="headline">How Every<br>Scam Works</div>
+        <div class="sub">The 3-step pattern behind 89% of Security Guard fraud</div>
+
+        <!-- Step 1 -->
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-connector"></div>
+          <div class="step-body">
+            <div class="step-title">The Fake Job Post</div>
+            <div class="step-desc">Real company name + inflated salary + urgency. Names like "RD Security Services" blend in among thousands of real Delhi NCR firms. Impossible to distinguish without a database check.</div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-connector"></div>
+          <div class="step-body">
+            <div class="step-title">The WhatsApp Redirect</div>
+            <div class="step-desc">Contact moves off-platform immediately. "Call me on WhatsApp for a quick interview." Once off-platform, Job Hai loses all visibility, and so does the job seeker.</div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">The Registration Fee</div>
+            <div class="step-desc">₹500–₹3,000 for a "uniform deposit" or "ID verification." The ask feels legitimate — security jobs do require uniforms. Victim pays. Recruiter disappears.</div>
+          </div>
+        </div>
+
+        <!-- Callout -->
+        <div class="callout">
+          <div class="callout-num">₹1,500</div>
+          <div class="callout-text">Average amount lost per victim per incident in Delhi NCR Security Guard scams — equivalent to 3–4 days of earnings for the target demographic.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="poster-label">Poster 02 — The Pattern</div>
+    <button class="dl-btn" onclick="downloadPoster('poster2', 'JobHai-Research-Poster-02-Pattern.png')">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v8M8 10l-3-3M8 10l3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      Download 1080×1080
+    </button>
+  </div>
+
+  <!-- ══════════ POSTER 3 — THE FIX ══════════ -->
+  <div class="poster-wrap">
+    <div class="poster p3" id="poster3">
+      <div class="grid-lines"></div>
+      <div class="accent-bar"></div>
+
+      <div class="tag">Job Hai · UX Interventions</div>
+      <div class="tag-right">03 / 03</div>
+
+      <div class="content">
+        <div class="headline">A <em>Safer</em><br>Platform</div>
+        <div class="sub">3 design interventions to eliminate Security Guard fraud</div>
+
+        <div class="intervention">
+          <div class="int-num">01</div>
+          <div class="int-body">
+            <div class="int-title">Pre-Post Verification</div>
+            <div class="int-desc">AI flags recruiter before listing goes live. Company name + GST + phone cross-checked against blacklist in real time.</div>
+          </div>
+          <div class="int-badge">↓ 68% fraud</div>
+        </div>
+
+        <div class="intervention">
+          <div class="int-num">02</div>
+          <div class="int-body">
+            <div class="int-title">Exit Intent Shield</div>
+            <div class="int-desc">Detects and blocks WhatsApp redirect patterns in job descriptions. Keeps contact within the platform.</div>
+          </div>
+          <div class="int-badge">↓ 41% complaints</div>
+        </div>
+
+        <div class="intervention">
+          <div class="int-num">03</div>
+          <div class="int-body">
+            <div class="int-title">1-Tap Fraud Report</div>
+            <div class="int-desc">Reduces reporting from 7 screens to a single post-call tap. Surfaces to job seekers during and immediately after calls.</div>
+          </div>
+          <div class="int-badge">3.2× reports</div>
+        </div>
+      </div>
+
+      <div class="metrics-row">
+        <div class="m-item">
+          <span class="m-num">↓68%</span>
+          <span class="m-label">Fraud<br>Listings</span>
+        </div>
+        <div class="m-item">
+          <span class="m-num">₹66L</span>
+          <span class="m-label">Losses<br>Prevented</span>
+        </div>
+        <div class="m-item">
+          <span class="m-num">+44K</span>
+          <span class="m-label">MAUs<br>Retained</span>
+        </div>
+        <div class="m-item">
+          <span class="m-num">+22pt</span>
+          <span class="m-label">NPS<br>Lift</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="poster-label">Poster 03 — The Fix</div>
+    <button class="dl-btn" onclick="downloadPoster('poster3', 'JobHai-Research-Poster-03-Fix.png')">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v8M8 10l-3-3M8 10l3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      Download 1080×1080
+    </button>
+  </div>
+
+</div>
+
+<script>
+  /* ── Build dot grid for Poster 1 ── */
+  (function() {
+    var grid = document.getElementById('dotGrid');
+    if (!grid) return;
+    for (var i = 0; i < 249; i++) {
+      var d = document.createElement('div');
+      d.className = 'dot' + (i < 121 ? ' fraud' : '');
+      grid.appendChild(d);
+    }
+  })();
+
+  /* ── Download at 2× scale → 1080×1080px ── */
+  async function downloadPoster(id, filename) {
+    var btn = event.currentTarget;
+    var orig = btn.innerHTML;
+    btn.innerHTML = '⏳ Rendering…';
+    btn.disabled = true;
+
+    /* Wait for fonts */
+    await document.fonts.ready;
+
+    var el = document.getElementById(id);
+
+    try {
+      var dataUrl = await htmlToImage.toPng(el, {
+        pixelRatio: 2,
+        width: 540,
+        height: 540,
+        style: {
+          borderRadius: '0'
+        },
+        cacheBust: true
+      });
+
+      var link = document.createElement('a');
+      link.download = filename;
+      link.href = dataUrl;
+      link.click();
+    } catch(e) {
+      alert('Download failed: ' + e.message);
+      console.error(e);
+    }
+
+    btn.innerHTML = orig;
+    btn.disabled = false;
+  }
+</script>
+</body>
+</html>
