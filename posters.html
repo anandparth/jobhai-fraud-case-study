@@ -2,915 +2,642 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Research Posters · JobHai Fraud Study</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Spline+Sans+Mono:wght@400;500;600&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Spline+Sans+Mono:wght@500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
 <style>
-  :root {
-    --ink: #221909;
-    --paper: #F5F0E8;
-    --paper-2: #EDE9DC;
-    --muted: #7a7060;
-    --accent: #1a8a7a;
-    --danger: #c92a2a;
-    --orange: #c9610a;
-    --safe: #1a8a7a;
-    --hl: #ffe89b;
-    --font-disp: "Bricolage Grotesque", system-ui, sans-serif;
-    --font-body: "Spline Sans", system-ui, sans-serif;
-    --font-mono: "Spline Sans Mono", monospace;
-  }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
-    background: #1a1612;
-    font-family: var(--font-body);
-    padding: 48px 24px 80px;
-    min-height: 100vh;
-  }
-
-  .page-header {
-    text-align: center;
-    margin-bottom: 56px;
-  }
-
-  .page-header h1 {
-    font-family: var(--font-disp);
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--paper);
-    letter-spacing: -.02em;
-  }
-
-  .page-header p {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: rgba(245,240,232,.4);
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    margin-top: 8px;
-  }
-
-  .gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 64px;
-    align-items: center;
-  }
-
-  .poster-wrap {
+    background: #0e0e0e;
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+    padding: 56px 24px 96px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    width: 100%;
-    max-width: 540px;
-  }
-
-  /* Displayed at 540px, exports at 1080×1080 (scale 2) */
-  .poster {
-    width: 540px;
-    height: 540px;
-    position: relative;
-    overflow: hidden;
-    flex-shrink: 0;
-    border-radius: 4px;
-  }
-
-  /* ─── POSTER 1 — THE SCALE ─── */
-  .p1 {
-    background: var(--ink);
-  }
-
-  .p1 .noise {
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    opacity: .5;
-    pointer-events: none;
-  }
-
-  .p1 .top-bar {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent), #4ecdc4);
-  }
-
-  .p1 .tag {
-    position: absolute;
-    top: 22px; left: 28px;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: rgba(245,240,232,.35);
-    font-weight: 500;
-  }
-
-  .p1 .tag-right {
-    position: absolute;
-    top: 22px; right: 28px;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: .12em;
-    color: rgba(245,240,232,.25);
-    text-transform: uppercase;
-  }
-
-  .p1 .main-num {
-    position: absolute;
-    top: 56px; left: 28px; right: 28px;
-    font-family: var(--font-disp);
-    font-weight: 800;
-    font-size: 164px;
-    line-height: .88;
-    letter-spacing: -.06em;
-    color: var(--paper);
-    opacity: .06;
-    pointer-events: none;
-    user-select: none;
-  }
-
-  .p1 .content {
-    position: absolute;
-    top: 56px; left: 28px; right: 28px;
-  }
-
-  .p1 .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 600;
-    margin-bottom: 14px;
-    display: block;
-  }
-
-  .p1 .headline {
-    font-family: var(--font-disp);
-    font-weight: 800;
-    font-size: 52px;
-    line-height: .92;
-    letter-spacing: -.03em;
-    color: var(--paper);
-    margin-bottom: 6px;
-  }
-
-  .p1 .headline em {
-    font-style: normal;
-    color: var(--accent);
-  }
-
-  .p1 .sub {
-    font-family: var(--font-body);
-    font-size: 14px;
-    color: rgba(245,240,232,.5);
-    line-height: 1.45;
-    margin-top: 14px;
-    max-width: 340px;
-  }
-
-  .p1 .divider {
-    position: absolute;
-    left: 28px; right: 28px;
-    top: 230px;
-    height: 1px;
-    background: rgba(245,240,232,.1);
-  }
-
-  .p1 .stats-row {
-    position: absolute;
-    left: 28px; right: 28px;
-    top: 252px;
-    display: flex;
     gap: 0;
   }
-
-  .p1 .stat-item {
-    flex: 1;
-    padding-right: 20px;
-    border-right: 1px solid rgba(245,240,232,.1);
-    margin-right: 20px;
-  }
-
-  .p1 .stat-item:last-child {
-    border-right: none;
-    margin-right: 0;
-    padding-right: 0;
-  }
-
-  .p1 .stat-num {
-    font-family: var(--font-disp);
-    font-weight: 800;
-    font-size: 38px;
-    line-height: 1;
-    letter-spacing: -.03em;
-    display: block;
-    margin-bottom: 6px;
-  }
-
-  .p1 .stat-num.orange { color: #e8822a; }
-  .p1 .stat-num.red    { color: #e05252; }
-  .p1 .stat-num.teal   { color: var(--accent); }
-  .p1 .stat-num.paper  { color: var(--paper); }
-
-  .p1 .stat-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: rgba(245,240,232,.35);
-    letter-spacing: .06em;
-    line-height: 1.4;
-    text-transform: uppercase;
-  }
-
-  .p1 .dot-grid {
-    position: absolute;
-    left: 28px; right: 28px;
-    top: 388px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-
-  .p1 .dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: rgba(245,240,232,.15);
-    flex-shrink: 0;
-  }
-
-  .p1 .dot.active {
-    background: var(--accent);
-    opacity: .7;
-  }
-
-  .p1 .dot.fraud {
-    background: #e05252;
-    opacity: .8;
-  }
-
-  .p1 .dot-legend {
-    position: absolute;
-    left: 28px;
-    bottom: 28px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .p1 .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-family: var(--font-mono);
-    font-size: 9px;
-    color: rgba(245,240,232,.3);
-    letter-spacing: .1em;
-    text-transform: uppercase;
-  }
-
-  .p1 .legend-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .p1 .byline {
-    position: absolute;
-    right: 28px;
-    bottom: 28px;
-    font-family: var(--font-mono);
-    font-size: 9px;
-    color: rgba(245,240,232,.2);
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    text-align: right;
-  }
-
-  /* ─── POSTER 2 — THE PATTERN ─── */
-  .p2 {
-    background: var(--paper);
-  }
-
-  .p2 .border-top {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 5px;
-    background: var(--ink);
-  }
-
-  .p2 .border-bottom {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 5px;
-    background: var(--ink);
-  }
-
-  .p2 .tag {
-    position: absolute;
-    top: 24px; left: 30px;
-    font-family: var(--font-mono);
-    font-size: 9px;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-    color: var(--muted);
-    font-weight: 600;
-  }
-
-  .p2 .num-bg {
-    position: absolute;
-    top: 8px; right: -10px;
-    font-family: var(--font-disp);
-    font-weight: 800;
-    font-size: 220px;
-    line-height: 1;
-    letter-spacing: -.06em;
-    color: var(--ink);
-    opacity: .04;
-    pointer-events: none;
-    user-select: none;
-  }
-
-  .p2 .content {
-    position: absolute;
-    top: 52px; left: 30px; right: 30px;
-    bottom: 24px;
-  }
-
-  .p2 .headline {
-    font-family: var(--font-disp);
-    font-weight: 800;
-    font-size: 38px;
-    line-height: .95;
-    letter-spacing: -.03em;
-    color: var(--ink);
-    margin-bottom: 4px;
-  }
-
-  .p2 .sub {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    margin-bottom: 26px;
-  }
-
-  .p2 .step {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    position: relative;
-  }
-
-  .p2 .step-num {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--ink);
-    color: var(--paper);
-    font-family: var(--font-disp);
-    font-weight: 800;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 1;
-  }
-
-  .p2 .step-connector {
-    position: absolute;
-    left: 17px;
-    top: 36px;
-    width: 2px;
-    height: 22px;
-    background: rgba(34,25,9,.15);
-  }
-
-  .p2 .step-body {
-    padding-top: 4px;
-  }
-
-  .p2 .step-title {
-    font-family: var(--font-disp);
-    font-weight: 700;
-    font-size: 17px;
-    color: var(--ink);
-    margin-bottom: 3px;
-    letter-spacing: -.01em;
-  }
-
-  .p2 .step-desc {
-    font-family: var(--font-body);
-    font-size: 12.5px;
-    color: var(--muted);
-    line-height: 1.45;
-    max-width: 380px;
-  }
-
-  .p2 .callout {
-    position: absolute;
-    bottom: 16px;
-    left: 0; right: 0;
-    background: var(--ink);
-    border-radius: 10px;
-    padding: 16px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-  }
-
-  .p2 .callout-num {
-    font-family: var(--font-disp);
-    font-weight: 800;
-    font-size: 36px;
-    color: #e8822a;
-    letter-spacing: -.03em;
-    line-height: 1;
-    flex-shrink: 0;
-  }
-
-  .p2 .callout-text {
-    font-family: var(--font-body);
-    font-size: 13px;
-    color: rgba(245,240,232,.75);
-    line-height: 1.4;
-  }
-
-  .p2 .byline {
-    position: absolute;
-    right: 30px;
-    bottom: 12px;
-    font-family: var(--font-mono);
-    font-size: 8px;
-    color: rgba(245,240,232,.3);
-    letter-spacing: .12em;
-    text-transform: uppercase;
-  }
-
-  /* ─── POSTER 3 — THE FIX ─── */
-  .p3 {
-    background: #0e2420;
-  }
-
-  .p3 .grid-lines {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-    background-size: 54px 54px;
-  }
-
-  .p3 .accent-bar {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #1a8a7a, #4ecdc4, #1a8a7a);
-  }
-
-  .p3 .tag {
-    position: absolute;
-    top: 22px; left: 28px;
-    font-family: var(--font-mono);
-    font-size: 9px;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    color: rgba(78,205,196,.5);
-    font-weight: 600;
-  }
-
-  .p3 .tag-right {
-    position: absolute;
-    top: 22px; right: 28px;
-    font-family: var(--font-mono);
-    font-size: 9px;
-    letter-spacing: .1em;
-    color: rgba(78,205,196,.25);
-    text-transform: uppercase;
-  }
-
-  .p3 .content {
-    position: absolute;
-    top: 52px; left: 28px; right: 28px;
-  }
-
-  .p3 .headline {
-    font-family: var(--font-disp);
-    font-weight: 800;
-    font-size: 44px;
-    line-height: .92;
-    letter-spacing: -.03em;
-    color: var(--paper);
-    margin-bottom: 4px;
-  }
-
-  .p3 .headline em {
-    font-style: normal;
-    color: #4ecdc4;
-  }
-
-  .p3 .sub {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: rgba(245,240,232,.35);
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    margin-bottom: 24px;
-  }
-
-  .p3 .intervention {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-    margin-bottom: 16px;
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(78,205,196,.12);
-    border-radius: 10px;
-    padding: 14px 16px;
-  }
-
-  .p3 .int-num {
-    font-family: var(--font-disp);
-    font-weight: 800;
-    font-size: 22px;
-    color: rgba(78,205,196,.4);
-    line-height: 1;
-    flex-shrink: 0;
-    width: 24px;
-  }
-
-  .p3 .int-body {
-    flex: 1;
-  }
-
-  .p3 .int-title {
-    font-family: var(--font-disp);
-    font-weight: 700;
-    font-size: 15px;
-    color: var(--paper);
-    margin-bottom: 2px;
-    letter-spacing: -.01em;
-  }
-
-  .p3 .int-desc {
-    font-family: var(--font-body);
-    font-size: 11.5px;
-    color: rgba(245,240,232,.4);
-    line-height: 1.4;
-  }
-
-  .p3 .int-badge {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    color: #4ecdc4;
-    letter-spacing: .08em;
-    background: rgba(78,205,196,.12);
-    border: 1px solid rgba(78,205,196,.2);
-    border-radius: 4px;
-    padding: 2px 7px;
-    white-space: nowrap;
-    align-self: center;
-    flex-shrink: 0;
-  }
-
-  .p3 .metrics-row {
-    position: absolute;
-    bottom: 28px;
-    left: 28px; right: 28px;
-    display: flex;
-    gap: 0;
-    border-top: 1px solid rgba(78,205,196,.15);
-    padding-top: 16px;
-  }
-
-  .p3 .m-item {
-    flex: 1;
-    text-align: center;
-    padding: 0 10px;
-    border-right: 1px solid rgba(78,205,196,.1);
-  }
-
-  .p3 .m-item:last-child {
-    border-right: none;
-  }
-
-  .p3 .m-num {
-    font-family: var(--font-disp);
-    font-weight: 800;
-    font-size: 26px;
-    letter-spacing: -.03em;
-    color: #4ecdc4;
-    display: block;
-    line-height: 1;
-    margin-bottom: 5px;
-  }
-
-  .p3 .m-label {
-    font-family: var(--font-mono);
-    font-size: 8.5px;
-    color: rgba(245,240,232,.3);
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    line-height: 1.35;
-    display: block;
-  }
-
-  /* ─── DOWNLOAD BUTTON ─── */
+  .page-title { color: #F5F0E8; font-size: 22px; font-weight: 800; letter-spacing: -.02em; margin-bottom: 6px; }
+  .page-sub { font-family: "Spline Sans Mono", monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: rgba(245,240,232,.25); margin-bottom: 60px; }
+  .poster-wrap { display: flex; flex-direction: column; align-items: center; gap: 18px; margin-bottom: 56px; }
+  .poster { width: 540px; height: 540px; overflow: hidden; display: block; }
+  .poster svg { width: 540px; height: 540px; display: block; }
+  .poster-label { font-family: "Spline Sans Mono", monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: rgba(245,240,232,.2); }
   .dl-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 11px 22px;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    font-weight: 600;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    transition: background .15s, transform .15s;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 24px;
+    background: #F5F0E8; color: #1a1208;
+    font-family: "Spline Sans Mono", monospace; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+    border: none; border-radius: 6px; cursor: pointer; transition: background .15s, transform .15s;
   }
-
-  .dl-btn:hover {
-    background: #fff;
-    transform: translateY(-1px);
-  }
-
-  .dl-btn svg {
-    flex-shrink: 0;
-  }
-
-  .poster-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: rgba(245,240,232,.25);
-    text-align: center;
-  }
+  .dl-btn:hover { background: #fff; transform: translateY(-1px); }
+  .dl-btn:disabled { opacity: .5; cursor: default; transform: none; }
 </style>
 </head>
 <body>
 
-<div class="page-header">
-  <h1>Research Gallery Posters</h1>
-  <p>JobHai Fraud Study · Delhi NCR · 2026 · Click to download 1080×1080px</p>
+<div class="page-title">Research Gallery Posters</div>
+<div class="page-sub">JobHai Fraud Study · Delhi NCR · 2026 · 1080×1080px</div>
+
+<!-- ══════════════════════════════════════════════
+     POSTER 1 — THE TRAP
+     Concept: Security guard pressed inside phone screen,
+     arms against the glass — trapped by the fake listing.
+     Inspired by: Priorities notebook (person trapped within something ordinary).
+     Background: warm amber/orange
+════════════════════════════════════════════════ -->
+<div class="poster-wrap">
+<div class="poster" id="poster1">
+<svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="grey"/>
+      <feBlend in="SourceGraphic" in2="grey" mode="overlay" result="blend"/>
+      <feComposite in="blend" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <filter id="softglow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow2" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="28" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Clip figure to screen interior -->
+    <clipPath id="screenClip">
+      <rect x="388" y="190" width="304" height="590" rx="10"/>
+    </clipPath>
+  </defs>
+
+  <!-- ── Background ── -->
+  <rect width="1080" height="1080" fill="#E8710A"/>
+  <rect width="1080" height="1080" fill="#E8710A" filter="url(#grain)" opacity="0.08"/>
+
+  <!-- Subtle shadow behind phone -->
+  <ellipse cx="560" cy="870" rx="200" ry="28" fill="#1a0800" opacity="0.22" filter="url(#softglow)"/>
+
+  <!-- ── Phone body ── -->
+  <rect x="370" y="72" width="340" height="748" rx="52" fill="#160e04"/>
+  <!-- Side volume buttons -->
+  <rect x="362" y="250" width="9" height="46" rx="4" fill="#251808"/>
+  <rect x="362" y="314" width="9" height="68" rx="4" fill="#251808"/>
+  <!-- Power button -->
+  <rect x="709" y="278" width="9" height="56" rx="4" fill="#251808"/>
+  <!-- Screen area -->
+  <rect x="388" y="138" width="304" height="660" rx="16" fill="#F4EEE4"/>
+  <!-- Dynamic island -->
+  <rect x="473" y="154" width="134" height="30" rx="15" fill="#160e04"/>
+  <!-- Home bar -->
+  <rect x="480" y="778" width="120" height="8" rx="4" fill="#c0b8a4"/>
+
+  <!-- ── Fake job listing at top of screen ── -->
+  <!-- Platform bar -->
+  <rect x="388" y="138" width="304" height="52" rx="16" fill="#eee8de"/>
+  <!-- Back arrow area -->
+  <rect x="400" y="155" width="18" height="18" rx="4" fill="#c0b89a" opacity="0.5"/>
+  <!-- Platform name -->
+  <rect x="430" y="158" width="80" height="12" rx="4" fill="#2ECABB" opacity="0.35"/>
+
+  <!-- Job listing card area -->
+  <rect x="396" y="200" width="288" height="180" rx="10" fill="#fff" opacity="0.7"/>
+  <!-- "URGENT" tag -->
+  <rect x="408" y="212" width="62" height="18" rx="4" fill="#E8710A"/>
+  <!-- Company name line -->
+  <rect x="408" y="238" width="160" height="11" rx="4" fill="#1a0f04" opacity="0.7"/>
+  <!-- Job title line (bold, bigger) -->
+  <rect x="408" y="257" width="220" height="15" rx="4" fill="#1a0f04" opacity="0.85"/>
+  <!-- Salary highlight -->
+  <rect x="408" y="280" width="140" height="10" rx="3" fill="#2ECABB" opacity="0.5"/>
+  <!-- Location + details lines -->
+  <rect x="408" y="300" width="180" height="8" rx="3" fill="#9a9280" opacity="0.5"/>
+  <rect x="408" y="316" width="120" height="8" rx="3" fill="#9a9280" opacity="0.5"/>
+  <!-- APPLY NOW button -->
+  <rect x="408" y="334" width="264" height="36" rx="7" fill="#1a0f04"/>
+  <!-- "APPLY NOW" text hint -->
+  <rect x="460" y="348" width="80" height="8" rx="3" fill="#F4EEE4" opacity="0.6"/>
+
+  <!-- ── TRAPPED GUARD FIGURE (clipped to phone screen) ── -->
+  <g clip-path="url(#screenClip)">
+    <!-- Ghost / shadow (offset, lighter, behind main figure) -->
+    <g opacity="0.12" transform="translate(8,8)">
+      <circle cx="540" cy="590" r="48" fill="#1a0f04"/>
+      <rect x="512" y="540" width="56" height="16" rx="4" fill="#1a0f04"/>
+      <rect x="518" y="524" width="44" height="18" rx="5" fill="#1a0f04"/>
+      <path d="M496,638 C480,652 472,700 468,760 L612,760 C608,700 600,652 584,638 Q562,622 540,622 Q518,622 496,638Z" fill="#1a0f04"/>
+      <path d="M490,650 Q444,640 390,624" stroke="#1a0f04" stroke-width="30" stroke-linecap="round" fill="none"/>
+      <path d="M590,650 Q636,640 690,624" stroke="#1a0f04" stroke-width="30" stroke-linecap="round" fill="none"/>
+    </g>
+
+    <!-- FIGURE: Guard pressed against screen glass -->
+    <!-- Security guard cap crown -->
+    <rect x="514" y="524" width="52" height="22" rx="5" fill="#1a0f04"/>
+    <!-- Cap brim / peak -->
+    <rect x="500" y="542" width="80" height="12" rx="3" fill="#1a0f04"/>
+
+    <!-- Head -->
+    <circle cx="540" cy="588" r="46" fill="#1a0f04"/>
+
+    <!-- Uniform torso -->
+    <path d="M496,634 C484,648 478,700 474,762 L606,762 C602,700 596,648 584,634 Q562,618 540,618 Q518,618 496,634Z" fill="#1a0f04"/>
+
+    <!-- Epaulette bars (gold) -->
+    <rect x="470" y="642" width="26" height="10" rx="3" fill="#c8a44a"/>
+    <rect x="584" y="642" width="26" height="10" rx="3" fill="#c8a44a"/>
+
+    <!-- LEFT ARM stretched wide pressing against left screen edge -->
+    <path d="M488,656 Q444,648 392,632" stroke="#1a0f04" stroke-width="30" stroke-linecap="round" fill="none"/>
+    <!-- Left palm flattened against glass -->
+    <ellipse cx="394" cy="630" rx="24" ry="20" fill="#1a0f04"/>
+
+    <!-- RIGHT ARM stretched wide pressing against right screen edge -->
+    <path d="M592,656 Q636,648 688,632" stroke="#1a0f04" stroke-width="30" stroke-linecap="round" fill="none"/>
+    <!-- Right palm flattened against glass -->
+    <ellipse cx="686" cy="630" rx="24" ry="20" fill="#1a0f04"/>
+  </g>
+
+  <!-- Hand impression glow at screen edges (outside the figure but inside screen) -->
+  <ellipse cx="394" cy="630" rx="36" ry="30" fill="#E8710A" opacity="0.28" filter="url(#softglow)"/>
+  <ellipse cx="686" cy="630" rx="36" ry="30" fill="#E8710A" opacity="0.28" filter="url(#softglow)"/>
+
+  <!-- ── TOP LABEL ── -->
+  <text x="62" y="56" font-family="'Spline Sans Mono',monospace" font-size="22" fill="#F4EEE4" opacity="0.38" letter-spacing="3" font-weight="500">UX RESEARCH · JOB HAI · 2026</text>
+  <text x="62" y="92" font-family="'Spline Sans Mono',monospace" font-size="20" fill="#F4EEE4" opacity="0.22" letter-spacing="2">01 / 03</text>
+
+  <!-- ── BOTTOM TEXT AREA ── -->
+  <text x="62" y="898" font-family="'Bricolage Grotesque',system-ui,sans-serif" font-size="86" font-weight="800" fill="#1a0f04" letter-spacing="-3">THE TRAP</text>
+  <text x="62" y="942" font-family="'Spline Sans Mono',monospace" font-size="21" fill="#1a0f04" opacity="0.45" letter-spacing="0.5">249 blacklisted recruiters · Delhi NCR</text>
+
+  <!-- ── JOB HAI LOGO (bottom right) ── -->
+  <g transform="translate(862,880)">
+    <!-- JOB -->
+    <text x="0" y="0" font-family="'Bricolage Grotesque',system-ui,sans-serif" font-size="56" font-weight="800" fill="#2DCBBF" letter-spacing="-1">JOB</text>
+    <!-- Checkmark (upper-right of JOB, matching real logo position) -->
+    <path d="M138,-20 L148,-6 L170,-36" stroke="#2DCBBF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- hai (below, indented right — matching real logo layout) -->
+    <text x="16" y="48" font-family="'Bricolage Grotesque',system-ui,sans-serif" font-size="44" font-weight="700" fill="#1A3A2A" letter-spacing="-0.5">hai</text>
+  </g>
+</svg>
+</div>
+<div class="poster-label">Poster 01 — The Trap</div>
+<button class="dl-btn" onclick="downloadPoster('poster1','JobHai-Research-Poster-01-TheTrap.png')">
+  ↓ Download 1080×1080
+</button>
 </div>
 
-<div class="gallery">
 
-  <!-- ══════════ POSTER 1 — THE SCALE ══════════ -->
-  <div class="poster-wrap">
-    <div class="poster p1" id="poster1">
-      <div class="noise"></div>
-      <div class="top-bar"></div>
-      <div class="tag">UX Research · Job Hai · 2026</div>
-      <div class="tag-right">01 / 03</div>
+<!-- ══════════════════════════════════════════════
+     POSTER 2 — THE OFF-RAMP
+     Concept: Security guard job seekers seated on a steel
+     beam (like "Lunch Atop a Skyscraper"), all on phones.
+     A crack/gap in the beam on the right. One figure falling.
+     Below the gap: a WhatsApp-style chat bubble.
+     Metaphor: the off-platform redirect that kills them.
+     Background: dusty blue (like the graduation workers ref)
+════════════════════════════════════════════════ -->
+<div class="poster-wrap">
+<div class="poster" id="poster2">
+<svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="grain2">
+      <feTurbulence type="fractalNoise" baseFrequency="0.68" numOctaves="4" stitchTiles="stitch" result="n"/>
+      <feColorMatrix type="saturate" values="0" in="n" result="g"/>
+      <feBlend in="SourceGraphic" in2="g" mode="overlay" result="b"/>
+      <feComposite in="b" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <filter id="drop2" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#1a2a38" flood-opacity="0.18"/>
+    </filter>
+    <!-- Crack mask for beam gap -->
+    <mask id="beamMask">
+      <rect width="1080" height="1080" fill="white"/>
+      <!-- Gap in beam (crack) -->
+      <polygon points="790,576 810,568 818,614 798,622" fill="black"/>
+    </mask>
+  </defs>
 
-      <!-- Ghost number -->
-      <div class="main-num">249</div>
+  <!-- ── Background: dusty steel blue ── -->
+  <rect width="1080" height="1080" fill="#B4CEDB"/>
+  <!-- Subtle sky gradient feel -->
+  <rect width="1080" height="1080" fill="url(#skyGrad)" opacity="0.4"/>
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C8DDE8"/>
+      <stop offset="100%" stop-color="#9BBCCC"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#skyGrad)"/>
+  <!-- Grain -->
+  <rect width="1080" height="1080" fill="#B4CEDB" filter="url(#grain2)" opacity="0.07"/>
 
-      <!-- Main content -->
-      <div class="content">
-        <span class="eyebrow">The Scale of the Problem</span>
-        <div class="headline">
-          <em>249</em> Blacklisted<br>Recruiters
-        </div>
-        <div class="sub">Delhi NCR · Security Guard Category · A UX research study on fraudulent recruitment patterns on the Job Hai platform</div>
-      </div>
+  <!-- ── I-BEAM (horizontal structural steel) ── -->
+  <!-- Top flange -->
+  <rect x="40" y="560" width="760" height="22" rx="3" fill="#3a4a54" mask="url(#beamMask)"/>
+  <!-- Web -->
+  <rect x="50" y="582" width="748" height="32" rx="0" fill="#2e3c46" mask="url(#beamMask)"/>
+  <!-- Bottom flange -->
+  <rect x="40" y="614" width="760" height="22" rx="3" fill="#3a4a54" mask="url(#beamMask)"/>
+  <!-- Beam right end (cut edge showing crack/break) -->
+  <polygon points="800,556 818,556 826,638 808,638" fill="#3a4a54" opacity="0.6"/>
 
-      <!-- Divider -->
-      <div class="divider"></div>
+  <!-- Beam highlight (top edge glint) -->
+  <line x1="40" y1="562" x2="796" y2="562" stroke="#7a9aaa" stroke-width="2" opacity="0.4" mask="url(#beamMask)"/>
 
-      <!-- 3 stats -->
-      <div class="stats-row">
-        <div class="stat-item">
-          <span class="stat-num orange">121</span>
-          <span class="stat-label">Recruiters<br>Posting Fake<br>Guard Jobs</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num red">653</span>
-          <span class="stat-label">Fake Job<br>Postings<br>Active</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num teal">#1</span>
-          <span class="stat-label">Most Fraud-<br>Prone Category<br>in NCR</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num paper">₹66L</span>
-          <span class="stat-label">Annual User<br>Losses<br>Preventable</span>
-        </div>
-      </div>
+  <!-- Rivet details on beam -->
+  <circle cx="80" cy="593" r="5" fill="#4a5e6a" opacity="0.6"/>
+  <circle cx="160" cy="593" r="5" fill="#4a5e6a" opacity="0.6"/>
+  <circle cx="240" cy="593" r="5" fill="#4a5e6a" opacity="0.6"/>
+  <circle cx="320" cy="593" r="5" fill="#4a5e6a" opacity="0.6"/>
+  <circle cx="400" cy="593" r="5" fill="#4a5e6a" opacity="0.6"/>
+  <circle cx="480" cy="593" r="5" fill="#4a5e6a" opacity="0.6"/>
+  <circle cx="560" cy="593" r="5" fill="#4a5e6a" opacity="0.6"/>
+  <circle cx="640" cy="593" r="5" fill="#4a5e6a" opacity="0.6"/>
+  <circle cx="720" cy="593" r="5" fill="#4a5e6a" opacity="0.6"/>
 
-      <!-- Dot grid: 249 dots, 121 highlighted as fraud -->
-      <div class="dot-grid" id="dotGrid"></div>
+  <!-- ── FIGURE TEMPLATE NOTES:
+       Each figure's (0,0) = their seat position at beam top (y=560).
+       Head cap top sits at about y=-280 from seat → absolute y=280.
+       Feet hang at about y=+110 from seat → absolute y=670.
+       Spacing: figures at x = 120, 270, 420, 570, 710
+  ── -->
 
-      <!-- Legend -->
-      <div class="dot-legend">
-        <div class="legend-item">
-          <div class="legend-dot" style="background:#e05252;opacity:.8"></div>
-          Fraud recruiters (121)
-        </div>
-        <div class="legend-item">
-          <div class="legend-dot" style="background:rgba(245,240,232,.15)"></div>
-          Other blacklisted (128)
-        </div>
-      </div>
+  <!-- ── FIGURE 1 (leftmost, slight lean left) ── -->
+  <g transform="translate(120,560)">
+    <!-- Cap crown -->
+    <rect x="-24" y="-276" width="48" height="20" rx="5" fill="#2a3540"/>
+    <!-- Cap brim -->
+    <rect x="-34" y="-260" width="68" height="11" rx="3" fill="#2a3540"/>
+    <!-- Head -->
+    <circle cx="0" cy="-228" r="32" fill="#2a3540"/>
+    <!-- Neck -->
+    <rect x="-9" y="-196" width="18" height="14" fill="#2a3540"/>
+    <!-- Torso -->
+    <rect x="-30" y="-182" width="60" height="96" rx="7" fill="#2a3540"/>
+    <!-- Epaulettes -->
+    <rect x="-42" y="-172" width="18" height="9" rx="3" fill="#c8a44a"/>
+    <rect x="24" y="-172" width="18" height="9" rx="3" fill="#c8a44a"/>
+    <!-- Belt -->
+    <rect x="-30" y="-98" width="60" height="12" rx="3" fill="#1e2c38"/>
+    <!-- Left arm (resting on knee) -->
+    <path d="M-30,-160 Q-44,-130 -52,-80" stroke="#2a3540" stroke-width="18" stroke-linecap="round" fill="none"/>
+    <!-- Right arm (hangs down) -->
+    <path d="M30,-160 Q36,-120 34,-70" stroke="#2a3540" stroke-width="18" stroke-linecap="round" fill="none"/>
+    <!-- Left thigh -->
+    <rect x="-64" y="-86" width="58" height="20" rx="8" fill="#2a3540"/>
+    <!-- Right thigh -->
+    <rect x="6" y="-86" width="58" height="20" rx="8" fill="#2a3540"/>
+    <!-- Left lower leg (hanging) -->
+    <rect x="-56" y="-66" width="18" height="78" rx="7" fill="#2a3540"/>
+    <!-- Right lower leg (hanging) -->
+    <rect x="14" y="-66" width="18" height="78" rx="7" fill="#2a3540"/>
+    <!-- Boots -->
+    <ellipse cx="-47" cy="18" rx="18" ry="8" fill="#2a3540"/>
+    <ellipse cx="23" cy="18" rx="18" ry="8" fill="#2a3540"/>
+  </g>
 
-      <div class="byline">Parth Anand · Job Hai</div>
-    </div>
+  <!-- ── FIGURE 2 (looking at phone) ── -->
+  <g transform="translate(270,560)">
+    <rect x="-24" y="-276" width="48" height="20" rx="5" fill="#2a3540"/>
+    <rect x="-34" y="-260" width="68" height="11" rx="3" fill="#2a3540"/>
+    <circle cx="0" cy="-228" r="32" fill="#2a3540"/>
+    <rect x="-9" y="-196" width="18" height="14" fill="#2a3540"/>
+    <rect x="-30" y="-182" width="60" height="96" rx="7" fill="#2a3540"/>
+    <rect x="-42" y="-172" width="18" height="9" rx="3" fill="#c8a44a"/>
+    <rect x="24" y="-172" width="18" height="9" rx="3" fill="#c8a44a"/>
+    <rect x="-30" y="-98" width="60" height="12" rx="3" fill="#1e2c38"/>
+    <!-- Left arm up, holding phone to face -->
+    <path d="M-30,-162 Q-40,-138 -46,-100" stroke="#2a3540" stroke-width="18" stroke-linecap="round" fill="none"/>
+    <!-- Right arm up, holding phone -->
+    <path d="M30,-162 Q40,-138 44,-100" stroke="#2a3540" stroke-width="18" stroke-linecap="round" fill="none"/>
+    <!-- Phone (angled up toward face) -->
+    <rect x="-16" y="-136" width="32" height="50" rx="5" fill="#4a8fa4" transform="rotate(-8,0,-110)"/>
+    <rect x="-12" y="-132" width="24" height="42" rx="3" fill="#7ab0c4" opacity="0.55" transform="rotate(-8,0,-110)"/>
+    <!-- Thighs -->
+    <rect x="-64" y="-86" width="58" height="20" rx="8" fill="#2a3540"/>
+    <rect x="6" y="-86" width="58" height="20" rx="8" fill="#2a3540"/>
+    <!-- Lower legs -->
+    <rect x="-56" y="-66" width="18" height="78" rx="7" fill="#2a3540"/>
+    <rect x="14" y="-66" width="18" height="78" rx="7" fill="#2a3540"/>
+    <ellipse cx="-47" cy="18" rx="18" ry="8" fill="#2a3540"/>
+    <ellipse cx="23" cy="18" rx="18" ry="8" fill="#2a3540"/>
+  </g>
 
-    <div class="poster-label">Poster 01 — The Scale</div>
-    <button class="dl-btn" onclick="downloadPoster('poster1', 'JobHai-Research-Poster-01-Scale.png')">
-      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v8M8 10l-3-3M8 10l3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      Download 1080×1080
-    </button>
-  </div>
+  <!-- ── FIGURE 3 (center, leaning toward figure 2) ── -->
+  <g transform="translate(420,560)">
+    <rect x="-24" y="-276" width="48" height="20" rx="5" fill="#2a3540"/>
+    <rect x="-34" y="-260" width="68" height="11" rx="3" fill="#2a3540"/>
+    <!-- Head tilted (looking left at figure 2) -->
+    <circle cx="-6" cy="-228" r="32" fill="#2a3540"/>
+    <rect x="-9" y="-196" width="18" height="14" fill="#2a3540"/>
+    <rect x="-30" y="-182" width="60" height="96" rx="7" fill="#2a3540"/>
+    <rect x="-42" y="-172" width="18" height="9" rx="3" fill="#c8a44a"/>
+    <rect x="24" y="-172" width="18" height="9" rx="3" fill="#c8a44a"/>
+    <rect x="-30" y="-98" width="60" height="12" rx="3" fill="#1e2c38"/>
+    <!-- Arms - looking at phone, leaning -->
+    <path d="M-30,-162 Q-46,-140 -50,-98" stroke="#2a3540" stroke-width="18" stroke-linecap="round" fill="none"/>
+    <path d="M30,-162 Q36,-130 30,-86" stroke="#2a3540" stroke-width="18" stroke-linecap="round" fill="none"/>
+    <!-- Phone in lap -->
+    <rect x="-18" y="-90" width="28" height="42" rx="4" fill="#4a8fa4"/>
+    <rect x="-14" y="-87" width="20" height="36" rx="2" fill="#7ab0c4" opacity="0.55"/>
+    <rect x="-64" y="-86" width="58" height="20" rx="8" fill="#2a3540"/>
+    <rect x="6" y="-86" width="58" height="20" rx="8" fill="#2a3540"/>
+    <rect x="-56" y="-66" width="18" height="78" rx="7" fill="#2a3540"/>
+    <rect x="14" y="-66" width="18" height="78" rx="7" fill="#2a3540"/>
+    <ellipse cx="-47" cy="18" rx="18" ry="8" fill="#2a3540"/>
+    <ellipse cx="23" cy="18" rx="18" ry="8" fill="#2a3540"/>
+  </g>
 
-  <!-- ══════════ POSTER 2 — THE PATTERN ══════════ -->
-  <div class="poster-wrap">
-    <div class="poster p2" id="poster2">
-      <div class="border-top"></div>
-      <div class="border-bottom"></div>
-      <div class="num-bg">3</div>
+  <!-- ── FIGURE 4 (relaxed, legs dangling) ── -->
+  <g transform="translate(570,560)">
+    <rect x="-24" y="-276" width="48" height="20" rx="5" fill="#2a3540"/>
+    <rect x="-34" y="-260" width="68" height="11" rx="3" fill="#2a3540"/>
+    <circle cx="0" cy="-228" r="32" fill="#2a3540"/>
+    <rect x="-9" y="-196" width="18" height="14" fill="#2a3540"/>
+    <rect x="-30" y="-182" width="60" height="96" rx="7" fill="#2a3540"/>
+    <rect x="-42" y="-172" width="18" height="9" rx="3" fill="#c8a44a"/>
+    <rect x="24" y="-172" width="18" height="9" rx="3" fill="#c8a44a"/>
+    <rect x="-30" y="-98" width="60" height="12" rx="3" fill="#1e2c38"/>
+    <!-- Arms down -->
+    <path d="M-30,-162 Q-38,-128 -36,-86" stroke="#2a3540" stroke-width="18" stroke-linecap="round" fill="none"/>
+    <path d="M30,-162 Q38,-128 36,-86" stroke="#2a3540" stroke-width="18" stroke-linecap="round" fill="none"/>
+    <!-- Small phone in right hand -->
+    <rect x="28" y="-100" width="24" height="36" rx="4" fill="#4a8fa4"/>
+    <rect x="31" y="-97" width="18" height="30" rx="2" fill="#7ab0c4" opacity="0.55"/>
+    <!-- Thighs swinging (one leg kicked up slightly) -->
+    <rect x="-64" y="-86" width="58" height="20" rx="8" fill="#2a3540"/>
+    <rect x="6" y="-90" width="58" height="20" rx="8" fill="#2a3540" transform="rotate(-8,35,-80)"/>
+    <rect x="-56" y="-66" width="18" height="78" rx="7" fill="#2a3540"/>
+    <rect x="14" y="-70" width="18" height="82" rx="7" fill="#2a3540" transform="rotate(6,23,-29)"/>
+    <ellipse cx="-47" cy="18" rx="18" ry="8" fill="#2a3540"/>
+    <ellipse cx="28" cy="26" rx="18" ry="8" fill="#2a3540" transform="rotate(6,28,26)"/>
+  </g>
 
-      <div class="tag">02 / 03 · Fraud Anatomy</div>
+  <!-- ── CRACK / GAP INDICATOR in beam ── -->
+  <!-- Lightning bolt crack at x=790 -->
+  <polyline points="793,557 785,580 796,586 786,638" stroke="#B4CEDB" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <polyline points="806,557 798,580 809,586 799,638" stroke="#9BBCCC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.7"/>
 
-      <div class="content">
-        <div class="headline">How Every<br>Scam Works</div>
-        <div class="sub">The 3-step pattern behind 89% of Security Guard fraud</div>
+  <!-- ── FALLING FIGURE 5 (tumbling off right end) ── -->
+  <!-- Rotated ~50deg, falling to lower right, arms flailing -->
+  <g transform="translate(880,700) rotate(48)">
+    <rect x="-24" y="-276" width="48" height="20" rx="5" fill="#2a3540" opacity="0.9"/>
+    <rect x="-34" y="-260" width="68" height="11" rx="3" fill="#2a3540" opacity="0.9"/>
+    <circle cx="0" cy="-228" r="32" fill="#2a3540" opacity="0.9"/>
+    <rect x="-9" y="-196" width="18" height="14" fill="#2a3540" opacity="0.9"/>
+    <rect x="-30" y="-182" width="60" height="96" rx="7" fill="#2a3540" opacity="0.9"/>
+    <rect x="-42" y="-172" width="18" height="9" rx="3" fill="#c8a44a" opacity="0.9"/>
+    <rect x="24" y="-172" width="18" height="9" rx="3" fill="#c8a44a" opacity="0.9"/>
+    <!-- Arms flailing out wide (surprise) -->
+    <path d="M-30,-158 Q-72,-148 -98,-128" stroke="#2a3540" stroke-width="20" stroke-linecap="round" fill="none" opacity="0.9"/>
+    <path d="M30,-158 Q72,-148 98,-128" stroke="#2a3540" stroke-width="20" stroke-linecap="round" fill="none" opacity="0.9"/>
+    <!-- Phone slipping from hand -->
+    <rect x="88" y="-148" width="22" height="34" rx="4" fill="#4a8fa4" opacity="0.8" transform="rotate(20,99,-131)"/>
+    <!-- Legs splayed (falling) -->
+    <path d="M-20,-86 Q-36,-50 -44,10" stroke="#2a3540" stroke-width="22" stroke-linecap="round" fill="none" opacity="0.9"/>
+    <path d="M20,-86 Q44,-50 52,10" stroke="#2a3540" stroke-width="22" stroke-linecap="round" fill="none" opacity="0.9"/>
+  </g>
 
-        <!-- Step 1 -->
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-connector"></div>
-          <div class="step-body">
-            <div class="step-title">The Fake Job Post</div>
-            <div class="step-desc">Real company name + inflated salary + urgency. Names like "RD Security Services" blend in among thousands of real Delhi NCR firms. Impossible to distinguish without a database check.</div>
-          </div>
-        </div>
+  <!-- ── "WhatsApp" landing zone below the fall ── -->
+  <!-- Chat bubble shape -->
+  <rect x="880" y="820" width="130" height="90" rx="18" fill="#25D366" opacity="0.22"/>
+  <polygon points="910,910 896,938 930,910" fill="#25D366" opacity="0.22"/>
+  <!-- Phone icon inside bubble -->
+  <path d="M914,846 Q914,840 920,840 L994,840 Q1000,840 1000,846 L1000,906 Q1000,912 994,912 L920,912 Q914,912 914,906 Z" stroke="#25D366" stroke-width="3" fill="none" opacity="0.45"/>
 
-        <!-- Step 2 -->
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-connector"></div>
-          <div class="step-body">
-            <div class="step-title">The WhatsApp Redirect</div>
-            <div class="step-desc">Contact moves off-platform immediately. "Call me on WhatsApp for a quick interview." Once off-platform, Job Hai loses all visibility, and so does the job seeker.</div>
-          </div>
-        </div>
+  <!-- Arrow indicating the redirect/fall direction -->
+  <path d="M800,530 Q840,480 870,450" stroke="#2a3540" stroke-width="2.5" fill="none" stroke-dasharray="8,6" opacity="0.25"/>
+  <polygon points="870,440 880,460 860,458" fill="#2a3540" opacity="0.25"/>
 
-        <!-- Step 3 -->
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <div class="step-title">The Registration Fee</div>
-            <div class="step-desc">₹500–₹3,000 for a "uniform deposit" or "ID verification." The ask feels legitimate — security jobs do require uniforms. Victim pays. Recruiter disappears.</div>
-          </div>
-        </div>
+  <!-- ── TOP LABEL ── -->
+  <text x="56" y="60" font-family="'Spline Sans Mono',monospace" font-size="22" fill="#1a2a38" opacity="0.35" letter-spacing="3" font-weight="500">UX RESEARCH · JOB HAI · 2026</text>
+  <text x="56" y="96" font-family="'Spline Sans Mono',monospace" font-size="20" fill="#1a2a38" opacity="0.2" letter-spacing="2">02 / 03</text>
 
-        <!-- Callout -->
-        <div class="callout">
-          <div class="callout-num">₹1,500</div>
-          <div class="callout-text">Average amount lost per victim per incident in Delhi NCR Security Guard scams — equivalent to 3–4 days of earnings for the target demographic.</div>
-        </div>
-      </div>
-    </div>
+  <!-- ── BOTTOM TEXT ── -->
+  <text x="56" y="906" font-family="'Bricolage Grotesque',system-ui,sans-serif" font-size="74" font-weight="800" fill="#1a2a38" letter-spacing="-2.5">THE OFF-RAMP</text>
+  <text x="56" y="952" font-family="'Spline Sans Mono',monospace" font-size="21" fill="#1a2a38" opacity="0.4" letter-spacing="0.5">87% of scams redirect victims off-platform via WhatsApp</text>
 
-    <div class="poster-label">Poster 02 — The Pattern</div>
-    <button class="dl-btn" onclick="downloadPoster('poster2', 'JobHai-Research-Poster-02-Pattern.png')">
-      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v8M8 10l-3-3M8 10l3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      Download 1080×1080
-    </button>
-  </div>
+  <!-- ── JOB HAI LOGO ── -->
+  <g transform="translate(862,880)">
+    <text x="0" y="0" font-family="'Bricolage Grotesque',system-ui,sans-serif" font-size="56" font-weight="800" fill="#2DCBBF" letter-spacing="-1">JOB</text>
+    <path d="M138,-20 L148,-6 L170,-36" stroke="#2DCBBF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="16" y="48" font-family="'Bricolage Grotesque',system-ui,sans-serif" font-size="44" font-weight="700" fill="#1A3A2A" letter-spacing="-0.5">hai</text>
+  </g>
+</svg>
+</div>
+<div class="poster-label">Poster 02 — The Off-Ramp</div>
+<button class="dl-btn" onclick="downloadPoster('poster2','JobHai-Research-Poster-02-TheOffRamp.png')">
+  ↓ Download 1080×1080
+</button>
+</div>
 
-  <!-- ══════════ POSTER 3 — THE FIX ══════════ -->
-  <div class="poster-wrap">
-    <div class="poster p3" id="poster3">
-      <div class="grid-lines"></div>
-      <div class="accent-bar"></div>
 
-      <div class="tag">Job Hai · UX Interventions</div>
-      <div class="tag-right">03 / 03</div>
+<!-- ══════════════════════════════════════════════
+     POSTER 3 — THE GUARD
+     Concept: A security guard stands protected inside a
+     glowing verification shield. Clean, hopeful, resolved.
+     The Job Hai checkmark badge is woven into the shield.
+     Background: deep forest teal
+════════════════════════════════════════════════ -->
+<div class="poster-wrap">
+<div class="poster" id="poster3">
+<svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="grain3">
+      <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="4" stitchTiles="stitch" result="n"/>
+      <feColorMatrix type="saturate" values="0" in="n" result="g"/>
+      <feBlend in="SourceGraphic" in2="g" mode="overlay" result="b"/>
+      <feComposite in="b" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <radialGradient id="glowGrad" cx="50%" cy="45%" r="45%">
+      <stop offset="0%" stop-color="#2ECABB" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#2ECABB" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="shieldClip">
+      <!-- Shield path for clipping the guard inside -->
+      <path d="M540,170 L720,240 L720,520 Q720,680 540,780 Q360,680 360,520 L360,240 Z"/>
+    </clipPath>
+  </defs>
 
-      <div class="content">
-        <div class="headline">A <em>Safer</em><br>Platform</div>
-        <div class="sub">3 design interventions to eliminate Security Guard fraud</div>
+  <!-- ── Background: deep forest teal ── -->
+  <rect width="1080" height="1080" fill="#0A2420"/>
 
-        <div class="intervention">
-          <div class="int-num">01</div>
-          <div class="int-body">
-            <div class="int-title">Pre-Post Verification</div>
-            <div class="int-desc">AI flags recruiter before listing goes live. Company name + GST + phone cross-checked against blacklist in real time.</div>
-          </div>
-          <div class="int-badge">↓ 68% fraud</div>
-        </div>
+  <!-- Grid lines (subtle) -->
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60,0 L0,0 L0,60" fill="none" stroke="rgba(46,202,187,0.07)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#grid)"/>
 
-        <div class="intervention">
-          <div class="int-num">02</div>
-          <div class="int-body">
-            <div class="int-title">Exit Intent Shield</div>
-            <div class="int-desc">Detects and blocks WhatsApp redirect patterns in job descriptions. Keeps contact within the platform.</div>
-          </div>
-          <div class="int-badge">↓ 41% complaints</div>
-        </div>
+  <!-- Grain -->
+  <rect width="1080" height="1080" fill="#0A2420" filter="url(#grain3)" opacity="0.06"/>
 
-        <div class="intervention">
-          <div class="int-num">03</div>
-          <div class="int-body">
-            <div class="int-title">1-Tap Fraud Report</div>
-            <div class="int-desc">Reduces reporting from 7 screens to a single post-call tap. Surfaces to job seekers during and immediately after calls.</div>
-          </div>
-          <div class="int-badge">3.2× reports</div>
-        </div>
-      </div>
+  <!-- ── GLOW AURA behind shield ── -->
+  <ellipse cx="540" cy="480" rx="320" ry="340" fill="url(#glowGrad)"/>
+  <ellipse cx="540" cy="480" rx="260" ry="280" fill="#2ECABB" opacity="0.05" filter="url(#softglow3)"/>
+  <defs>
+    <filter id="softglow3" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
 
-      <div class="metrics-row">
-        <div class="m-item">
-          <span class="m-num">↓68%</span>
-          <span class="m-label">Fraud<br>Listings</span>
-        </div>
-        <div class="m-item">
-          <span class="m-num">₹66L</span>
-          <span class="m-label">Losses<br>Prevented</span>
-        </div>
-        <div class="m-item">
-          <span class="m-num">+44K</span>
-          <span class="m-label">MAUs<br>Retained</span>
-        </div>
-        <div class="m-item">
-          <span class="m-num">+22pt</span>
-          <span class="m-label">NPS<br>Lift</span>
-        </div>
-      </div>
-    </div>
+  <!-- ── SHIELD SHAPE (large, centered) ── -->
+  <!-- Shield outer (filled, slightly transparent) -->
+  <path d="M540,158 L732,232 L732,528 Q732,700 540,806 Q348,700 348,528 L348,232 Z"
+        fill="rgba(46,202,187,0.08)" stroke="#2ECABB" stroke-width="3"/>
+  <!-- Shield inner border -->
+  <path d="M540,188 L708,254 L708,524 Q708,674 540,770 Q372,674 372,524 L372,254 Z"
+        fill="none" stroke="#2ECABB" stroke-width="1.5" opacity="0.4"/>
 
-    <div class="poster-label">Poster 03 — The Fix</div>
-    <button class="dl-btn" onclick="downloadPoster('poster3', 'JobHai-Research-Poster-03-Fix.png')">
-      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2v8M8 10l-3-3M8 10l3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 13h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-      Download 1080×1080
-    </button>
-  </div>
+  <!-- ── STANDING GUARD FIGURE (inside shield) ── -->
+  <!-- Figure centered at (540, 590), full height ~520px -->
+  <g transform="translate(540,590)">
+    <!-- Cap crown -->
+    <rect x="-30" y="-370" width="60" height="24" rx="6" fill="#F4EEE4"/>
+    <!-- Cap brim (wide peak) -->
+    <rect x="-46" y="-350" width="92" height="14" rx="4" fill="#F4EEE4"/>
+    <!-- Cap badge (small circle center) -->
+    <circle cx="0" cy="-356" r="8" fill="#2ECABB" opacity="0.8"/>
 
+    <!-- Head -->
+    <circle cx="0" cy="-312" r="40" fill="#F4EEE4"/>
+
+    <!-- Neck -->
+    <rect x="-12" y="-272" width="24" height="18" fill="#F4EEE4"/>
+
+    <!-- Shirt collar -->
+    <path d="M-20,-258 L0,-240 L20,-258 L24,-254 L0,-232 L-24,-254 Z" fill="#2ECABB" opacity="0.6"/>
+
+    <!-- Torso (uniform jacket) -->
+    <rect x="-46" y="-254" width="92" height="148" rx="8" fill="#F4EEE4"/>
+
+    <!-- Jacket center line -->
+    <line x1="0" y1="-254" x2="0" y2="-108" stroke="#2ECABB" stroke-width="2.5" opacity="0.4"/>
+
+    <!-- Epaulettes (gold, prominent) -->
+    <rect x="-62" y="-240" width="24" height="12" rx="4" fill="#c8a44a"/>
+    <rect x="38" y="-240" width="24" height="12" rx="4" fill="#c8a44a"/>
+    <!-- Epaulette lines -->
+    <line x1="-58" y1="-240" x2="-58" y2="-228" stroke="#8a6420" stroke-width="2" opacity="0.6"/>
+    <line x1="-52" y1="-240" x2="-52" y2="-228" stroke="#8a6420" stroke-width="2" opacity="0.6"/>
+    <line x1="52" y1="-240" x2="52" y2="-228" stroke="#8a6420" stroke-width="2" opacity="0.6"/>
+    <line x1="58" y1="-240" x2="58" y2="-228" stroke="#8a6420" stroke-width="2" opacity="0.6"/>
+
+    <!-- Chest badge (small) -->
+    <rect x="-12" y="-210" width="24" height="28" rx="4" fill="#2ECABB" opacity="0.35"/>
+
+    <!-- Belt -->
+    <rect x="-46" y="-114" width="92" height="14" rx="4" fill="#1a3a30"/>
+    <!-- Belt buckle -->
+    <rect x="-10" y="-116" width="20" height="18" rx="3" fill="#c8a44a"/>
+
+    <!-- Arms (standing at sides, slightly at-ease) -->
+    <!-- Left arm -->
+    <path d="M-46,-234 Q-64,-194 -64,-100" stroke="#F4EEE4" stroke-width="28" stroke-linecap="round" fill="none"/>
+    <!-- Left forearm/hand -->
+    <path d="M-64,-100 Q-62,-68 -58,-38" stroke="#F4EEE4" stroke-width="22" stroke-linecap="round" fill="none"/>
+    <!-- Right arm -->
+    <path d="M46,-234 Q64,-194 64,-100" stroke="#F4EEE4" stroke-width="28" stroke-linecap="round" fill="none"/>
+    <!-- Right forearm (slightly bent forward) -->
+    <path d="M64,-100 Q62,-68 58,-38" stroke="#F4EEE4" stroke-width="22" stroke-linecap="round" fill="none"/>
+
+    <!-- Trousers -->
+    <!-- Left leg -->
+    <rect x="-42" y="-100" width="36" height="160" rx="8" fill="#F4EEE4"/>
+    <!-- Right leg -->
+    <rect x="6" y="-100" width="36" height="160" rx="8" fill="#F4EEE4"/>
+    <!-- Trouser stripe -->
+    <line x1="-24" y1="-100" x2="-24" y2="60" stroke="#2ECABB" stroke-width="2" opacity="0.3"/>
+    <line x1="24" y1="-100" x2="24" y2="60" stroke="#2ECABB" stroke-width="2" opacity="0.3"/>
+
+    <!-- Boots -->
+    <rect x="-46" y="56" width="38" height="22" rx="6" fill="#1a2a20"/>
+    <rect x="8" y="56" width="38" height="22" rx="6" fill="#1a2a20"/>
+  </g>
+
+  <!-- ── LARGE VERIFICATION CHECKMARK BADGE (overlaid on shield, upper right) ── -->
+  <!-- Badge circle -->
+  <circle cx="714" cy="234" r="68" fill="#0A2420" stroke="#2ECABB" stroke-width="4"/>
+  <circle cx="714" cy="234" r="60" fill="#2ECABB" opacity="0.15"/>
+  <!-- Checkmark -->
+  <path d="M686,234 L706,254 L742,214" stroke="#2ECABB" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- ── TOP: JOB HAI LOGO (large, prominent, centered) ── -->
+  <!-- Centered group: total logo width ~175px, anchored at x=540−(175/2)=452 -->
+  <g transform="translate(452,30)">
+    <!-- JOB -->
+    <text x="0" y="60" font-family="'Bricolage Grotesque',system-ui,sans-serif" font-size="66" font-weight="800" fill="#2DCBBF" letter-spacing="-1.5">JOB</text>
+    <!-- Checkmark (upper-right of JOB) -->
+    <path d="M162,22 L174,40 L202,4" stroke="#2DCBBF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- hai (below, indented) -->
+    <text x="20" y="112" font-family="'Bricolage Grotesque',system-ui,sans-serif" font-size="52" font-weight="700" fill="rgba(26,58,42,0.6)" letter-spacing="-1">hai</text>
+  </g>
+  <!-- Divider line under logo -->
+  <line x1="400" y1="156" x2="680" y2="156" stroke="#2DCBBF" stroke-width="1.5" opacity="0.2"/>
+
+  <!-- ── BOTTOM: TITLE + METRICS ── -->
+  <text x="56" y="890" font-family="'Bricolage Grotesque',system-ui,sans-serif" font-size="80" font-weight="800" fill="#F4EEE4" letter-spacing="-2.5">THE GUARD</text>
+  <text x="56" y="934" font-family="'Spline Sans Mono',monospace" font-size="21" fill="#F4EEE4" opacity="0.38" letter-spacing="0.5">A verified platform for every job seeker</text>
+
+  <!-- Metrics row -->
+  <line x1="56" y1="952" x2="1024" y2="952" stroke="#2ECABB" stroke-width="1" opacity="0.2"/>
+
+  <!-- Metric 1 -->
+  <text x="56" y="990" font-family="'Bricolage Grotesque',system-ui,sans-serif" font-size="30" font-weight="800" fill="#2ECABB" letter-spacing="-0.5">↓68%</text>
+  <text x="56" y="1016" font-family="'Spline Sans Mono',monospace" font-size="16" fill="#F4EEE4" opacity="0.3" letter-spacing="0">Fraud listings</text>
+
+  <!-- Metric 2 -->
+  <text x="310" y="990" font-family="'Bricolage Grotesque',system-ui,sans-serif" font-size="30" font-weight="800" fill="#2ECABB" letter-spacing="-0.5">₹66L</text>
+  <text x="310" y="1016" font-family="'Spline Sans Mono',monospace" font-size="16" fill="#F4EEE4" opacity="0.3">Losses prevented</text>
+
+  <!-- Metric 3 -->
+  <text x="564" y="990" font-family="'Bricolage Grotesque',system-ui,sans-serif" font-size="30" font-weight="800" fill="#2ECABB" letter-spacing="-0.5">+44K</text>
+  <text x="564" y="1016" font-family="'Spline Sans Mono',monospace" font-size="16" fill="#F4EEE4" opacity="0.3">MAUs retained</text>
+
+  <!-- Metric 4 -->
+  <text x="800" y="990" font-family="'Bricolage Grotesque',system-ui,sans-serif" font-size="30" font-weight="800" fill="#2ECABB" letter-spacing="-0.5">+22pt</text>
+  <text x="800" y="1016" font-family="'Spline Sans Mono',monospace" font-size="16" fill="#F4EEE4" opacity="0.3">NPS lift</text>
+
+  <!-- 03/03 label -->
+  <text x="1024" y="60" font-family="'Spline Sans Mono',monospace" font-size="20" fill="#F4EEE4" opacity="0.18" text-anchor="end" letter-spacing="2">03 / 03</text>
+</svg>
+</div>
+<div class="poster-label">Poster 03 — The Guard</div>
+<button class="dl-btn" onclick="downloadPoster('poster3','JobHai-Research-Poster-03-TheGuard.png')">
+  ↓ Download 1080×1080
+</button>
 </div>
 
 <script>
-  /* ── Build dot grid for Poster 1 ── */
-  (function() {
-    var grid = document.getElementById('dotGrid');
-    if (!grid) return;
-    for (var i = 0; i < 249; i++) {
-      var d = document.createElement('div');
-      d.className = 'dot' + (i < 121 ? ' fraud' : '');
-      grid.appendChild(d);
-    }
-  })();
-
-  /* ── Download at 2× scale → 1080×1080px ── */
   async function downloadPoster(id, filename) {
-    var btn = event.currentTarget;
-    var orig = btn.innerHTML;
+    const btn = event.currentTarget;
+    const orig = btn.innerHTML;
     btn.innerHTML = '⏳ Rendering…';
     btn.disabled = true;
 
-    /* Wait for fonts */
-    await document.fonts.ready;
-
-    var el = document.getElementById(id);
-
     try {
-      var dataUrl = await htmlToImage.toPng(el, {
-        pixelRatio: 2,
+      /* Wait for web fonts to fully load */
+      await document.fonts.ready;
+      await new Promise(r => setTimeout(r, 600));
+
+      const el = document.getElementById(id);
+      const dataUrl = await htmlToImage.toPng(el, {
+        pixelRatio: 2,        /* 540×2 = 1080px */
         width: 540,
         height: 540,
-        style: {
-          borderRadius: '0'
-        },
-        cacheBust: true
+        style: { borderRadius: '0' },
+        cacheBust: true,
+        skipFonts: false
       });
 
-      var link = document.createElement('a');
+      const link = document.createElement('a');
       link.download = filename;
       link.href = dataUrl;
       link.click();
-    } catch(e) {
-      alert('Download failed: ' + e.message);
+    } catch (e) {
+      alert('Render failed — try again: ' + e.message);
       console.error(e);
     }
 
