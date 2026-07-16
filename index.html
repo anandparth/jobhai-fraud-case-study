@@ -135,6 +135,12 @@ strong{font-weight:600;color:var(--ink)}
 .fig__cap .lbl{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 3px}
 .fig__cap .d{font-size:14px;color:var(--muted);margin:0;line-height:1.5}
 
+/* ============ FINAL-DESIGN MOCKUP GRID ============ */
+.shots{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin:30px auto 0;max-width:1060px}
+.shots .fig{margin:0;max-width:none}
+.shots .fig--lead{grid-column:1 / -1}
+.shots img{display:block;width:100%;height:auto;border-radius:6px}
+
 /* ============ STATS GRID ============ */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:28px auto;max-width:980px}
 .stat{background:#fff;border:2px solid var(--ink);border-radius:12px;padding:20px;box-shadow:4px 4px 0 rgba(34,32,25,.9)}
@@ -403,6 +409,7 @@ footer .sig{font-family:var(--font-hand);font-size:30px;color:var(--ink);font-we
 /* ============ RESPONSIVE ============ */
 @media(max-width:900px){
   .stats{grid-template-columns:repeat(2,1fr)}
+  .shots{grid-template-columns:1fr}
   .cards{grid-template-columns:1fr}
   .personas{grid-template-columns:1fr}
   .vuln-cards{grid-template-columns:1fr}
@@ -621,6 +628,7 @@ footer .sig{font-family:var(--font-hand);font-size:30px;color:var(--ink);font-we
       <a href="#hmw" class="toc-item reveal"><span class="ti">08</span><span class="tt">How Might We Questions</span></a>
       <a href="#solutions" class="toc-item reveal"><span class="ti">09</span><span class="tt">What We Should Fix</span></a>
       <a href="#impact" class="toc-item reveal"><span class="ti">10</span><span class="tt">Projected Impact</span></a>
+      <a href="#final" class="toc-item reveal"><span class="ti">11</span><span class="tt">Final Designs</span></a>
     </div>
   </div>
 </section>
@@ -1641,6 +1649,44 @@ footer .sig{font-family:var(--font-hand);font-size:30px;color:var(--ink);font-we
     <p class="impact-caveat">* Hypothetical projections based on available blacklisted recruiter dataset signals, industry fraud reduction benchmarks, and comparative UX research. Figures cover Delhi NCR Security Guard category only. All numbers require A/B testing to validate.</p>
     <div class="pq green reveal" style="margin-top:40px">
       <p><strong>The compounding effect:</strong> Trust is not linear. One prevented scam ripples into the network. A job seeker who wasn't scammed tells three others. A recruiter flagged before going live never builds a victim list. These numbers understate the real impact.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap col"><span class="rule"><svg viewBox="0 0 600 18" preserveAspectRatio="none"><path d="M2 10 q40 -8 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span></div>
+
+<!-- ============ 11 FINAL DESIGNS ============ -->
+<section class="sec" id="final">
+  <div class="wrap col">
+    <span class="eyebrow">the shipped thing</span>
+    <p class="kicker">11 — Final Designs</p>
+    <h2>What the Fixes Actually Look Like</h2>
+    <p class="lead">Three of the recommendations above, designed out as real screens — in the language the user actually reads, at the moment the scam actually happens.</p>
+  </div>
+  <div class="wrap">
+    <div class="shots">
+
+      <figure class="fig fig--lead" data-name="jobhai-final-warning-nudge">
+        <div class="fig__frame">
+          <img src="assets/jobhai-final-warning-nudge.jpg" alt="A Job Hai security guard listing marked 'New: Unverified', with a full-screen Hindi warning sheet appearing over it before the call connects." width="1800" height="1350" loading="lazy" decoding="async">
+        </div>
+        <figcaption class="fig__cap"><div class="t"><p class="lbl">Final · Safety nudge before the call</p><p class="d">The recommendation was a Hindi safety nudge fired <em>before</em> dialling an unverified recruiter. The listing carries an honest <strong>Unverified</strong> tag, and the warning interrupts at the only moment it can still change the outcome — not buried in terms the user will never open.</p></div></figcaption>
+      </figure>
+
+      <figure class="fig" data-name="jobhai-final-warning-listing">
+        <div class="fig__frame">
+          <img src="assets/jobhai-final-warning-listing.jpg" alt="A Job Hai listing for a Security Guard role in Delhi at ₹15,000 a month, showing a green Verified Recruiter tag and a Hindi advisory that real companies never charge for uniforms or deposits." width="1800" height="1350" loading="lazy" decoding="async">
+        </div>
+        <figcaption class="fig__cap"><div class="t"><p class="lbl">Final · Visible trust tier</p><p class="d">The trust tier stated on the card itself, plus the single most useful sentence in Hindi: real companies don&rsquo;t ask you to pay for a uniform, a deposit, or an ID card.</p></div></figcaption>
+      </figure>
+
+      <figure class="fig" data-name="jobhai-final-report">
+        <div class="fig__frame">
+          <img src="assets/jobhai-final-report.jpg" alt="A post-call Job Hai sheet asking in Hindi how the call went, with a red one-tap option reading 'Unhone paise mange — Report'." width="1800" height="1350" loading="lazy" decoding="async">
+        </div>
+        <figcaption class="fig__cap"><div class="t"><p class="lbl">Final · One-tap report</p><p class="d">Reporting collapsed to a single tap, surfaced the moment the call ends. &ldquo;They asked for money&rdquo; is the option — not a form, not a category tree.</p></div></figcaption>
+      </figure>
+
     </div>
   </div>
 </section>
